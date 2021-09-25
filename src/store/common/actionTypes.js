@@ -1,0 +1,4 @@
+export const FETCHING_START = 'common/FETCHING_START';
+export const FETCHING_FINISHED = 'common/FETCHING_FINISHED';
+export const IN_PROGRESS_START = 'common/IN_PROGRESS_START';
+export const IN_PROGRESS_FINISHED = 'common/IN_PROGRESS_FINISHED';
