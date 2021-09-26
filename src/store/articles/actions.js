@@ -7,3 +7,7 @@ export const articlesSectionsClearAction = () => ({ type: TYPE.ARTICLES_SECTIONS
 export const articlesFetchAction = params => ({ type: TYPE.ARTICLES_FETCH, params });
 export const articlesReceivedAction = data => ({ type: TYPE.ARTICLES_RECEIVED, data });
 export const articlesClearAction = () => ({ type: TYPE.ARTICLES_CLEAR });
+
+export const topStoriesFetchAction = params => ({ type: TYPE.TOP_STORIES_FETCH, params });
+export const topStoriesReceivedAction = data => ({ type: TYPE.TOP_STORIES_RECEIVED, data });
+export const topStoriesClearAction = () => ({ type: TYPE.TOP_STORIES_CLEAR });

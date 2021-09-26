@@ -9,6 +9,10 @@ const initialState = {
 		list: null,
 		count: 0
 	},
+	top_stories: {
+		list: null,
+		count: 0
+	}
 }
 
 export default function articlesReducer(state = initialState, { type, data }) {
@@ -30,7 +34,6 @@ export default function articlesReducer(state = initialState, { type, data }) {
 				},
 			}
 		case TYPE.ARTICLES_SECTIONS_RECEIVED:
-			console.log(data)
 			return {
 				...state,
 				sections: {
@@ -42,6 +45,22 @@ export default function articlesReducer(state = initialState, { type, data }) {
 			return {
 				...state,
 				sections: {
+					list: null,
+					count: 0,
+				}
+			}
+		case TYPE.TOP_STORIES_RECEIVED:
+			return {
+				...state,
+				top_stories: {
+					list: data.results,
+					count: data.num_results,
+				}
+			}
+		case TYPE.TOP_STORIES_CLEAR:
+			return {
+				...state,
+				top_stories: {
 					list: null,
 					count: 0,
 				}

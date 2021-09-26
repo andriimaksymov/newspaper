@@ -10,8 +10,9 @@ import PageHeader from "../components/PageHeader";
 import ArticleItem from "../components/ArticleItem";
 import Pagination from "../components/Pagination";
 import ArticleItemSkeleton from "../components/ArticleItemSkeleton";
+import TopStories from "../components/TopStories";
 
-export default function Articles({match}) {
+export default function Articles({ match }) {
 	const type = match.params.slug_name;
 	const title = type.charAt(0).toUpperCase() + type.slice(1);
 	const query = useQuery();
@@ -52,9 +53,7 @@ export default function Articles({match}) {
 					{articles.count > 20 && <Pagination count={count} />}
 				</Grid>
 				<Grid item xs={12} md={3}>
-					<aside>
-						aside
-					</aside>
+					<TopStories />
 				</Grid>
 			</Grid>
 		</Layout>
