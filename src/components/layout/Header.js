@@ -29,7 +29,7 @@ export default function Header() {
 			<Container>
 				<Grid container justifyContent="space-between">
 					<Grid item>
-						<Link to={routes.home} className={classes.logo}>Memanda</Link>
+						<Link to={routes.home} className={classes.logo}>NewsPaper</Link>
 					</Grid>
 					<Grid item>
 						Some content

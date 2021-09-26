@@ -7,8 +7,9 @@ import * as TYPE from "./actionTypes";
 
 function* getArticles({ params }) {
 	try {
+		const { type, config } = params;
 		yield put(fetchingStart());
-		const res = yield call(requestArticles, { params });
+		const res = yield call(requestArticles, type, config);
 		yield put(articlesReceivedAction(res));
 		yield put(fetchingFinished());
 	} catch (e) {

@@ -21,7 +21,7 @@ export default function Navigation() {
 	return (
 		<nav className={classes.nav}>
 			<Link className={classes.link} to={routes.home}>Home</Link>
-			<Link className={classes.link} to={routes.articles}>Articles</Link>
+			<Link className={classes.link} to={routes.articles("all")}>Articles</Link>
 		</nav>
 	)
 }

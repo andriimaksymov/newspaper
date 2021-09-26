@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import history from "../utils/history";
 import { useQuery } from "../utils/hooks";
 
-export default function PaginationRounded() {
+export default function PaginationRounded({count}) {
 	const query = useQuery();
 	const [page, setPage] = useState(0);
 	
@@ -18,7 +18,14 @@ export default function PaginationRounded() {
 	
 	return (
 		<Stack spacing={2}>
-			<Pagination count={6} defaultPage={page} shape="rounded" onChange={handleChangePage} />
+			<Pagination
+				count={count}
+				shape="rounded"
+				hideNextButton
+				hidePrevButton
+				defaultPage={page}
+				onChange={handleChangePage}
+			/>
 		</Stack>
 	)
 }

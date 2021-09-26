@@ -1,6 +1,6 @@
 {
   "name": "my-books",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.4.1",
@@ -13,8 +13,11 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.4",
     "history": "^4.10.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-moment": "^1.1.1",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",

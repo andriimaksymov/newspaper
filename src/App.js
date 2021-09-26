@@ -4,6 +4,7 @@ import { Router, Switch, Route } from "react-router-dom";
 import history from "./utils/history";
 import Default from "./components/Default";
 import ErrorBoundary from "./components/ErrorBoundary";
+import routes from "./utils/routes";
 
 const Home = lazy(() => import("./pages/Home"));
 const Articles = lazy(() => import("./pages/Articles"));
@@ -15,8 +16,8 @@ export default function App() {
       <Router history={history}>
         <Suspense fallback={<Default />}>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/articles" component={Articles} />
+            <Route exact path={routes.home} component={Home} />
+            <Route path={routes.articles(":slug_name")} component={Articles} />
             <Route path="*" component={Error} />
           </Switch>
         </Suspense>

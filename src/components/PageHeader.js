@@ -7,6 +7,9 @@ const useStyles = makeStyles({
 	},
 	pageHeader: {
 		textDecoration: 'underline',
+	},
+	subtitle: {
+		fontSize: 12
 	}
 });
 
@@ -15,6 +18,7 @@ export default function PageHeader({ title }) {
 	
 	return (
 		<div className={classes.headerWrap}>
+			<span className={classes.subtitle}>CATEGORIES</span>
 			<Typography className={classes.pageHeader} variant="h5" component="h2">{title}</Typography>
 		</div>
 	)

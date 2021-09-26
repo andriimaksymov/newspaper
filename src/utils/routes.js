@@ -1,6 +1,6 @@
 const routes = {
 	home: '/',
-	articles: '/articles',
+	articles: slug_name => `/articles/${slug_name}`,
 	
 };
 
