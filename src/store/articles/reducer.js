@@ -1,8 +1,14 @@
 import * as TYPE from "./actionTypes";
 
 const initialState = {
-	list: null,
-	totalCount: 0
+	articles: {
+		list: null,
+		count: 0
+	},
+	sections: {
+		list: null,
+		count: 0
+	},
 }
 
 export default function articlesReducer(state = initialState, { type, data }) {
@@ -10,8 +16,35 @@ export default function articlesReducer(state = initialState, { type, data }) {
 		case TYPE.ARTICLES_RECEIVED:
 			return {
 				...state,
-				list: data.results,
-				totalCount: data.num_results,
+				articles: {
+					list: data.results,
+					count: data.num_results,
+				},
+			}
+		case TYPE.ARTICLES_CLEAR:
+			return {
+				...state,
+				articles: {
+					list: null,
+					count: 0,
+				},
+			}
+		case TYPE.ARTICLES_SECTIONS_RECEIVED:
+			console.log(data)
+			return {
+				...state,
+				sections: {
+					list: data.results,
+					count: data.num_results,
+				}
+			}
+		case TYPE.ARTICLES_SECTIONS_CLEAR:
+			return {
+				...state,
+				sections: {
+					list: null,
+					count: 0,
+				}
 			}
 		default:
 			return state;

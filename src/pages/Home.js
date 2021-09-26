@@ -1,9 +1,9 @@
-import {Link} from "react-router-dom";
+import Layout from "../components/layout";
 
 export default function Home() {
 	return (
-		<div>
-			<Link to="/articles">articles</Link>
-		</div>
+		<Layout>
+			Home page
+		</Layout>
 	)
 }
