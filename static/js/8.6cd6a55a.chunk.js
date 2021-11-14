@@ -1,2 +1,0 @@
-(this["webpackJsonpmy-books"]=this["webpackJsonpmy-books"]||[]).push([[8],{211:function(n,o,t){"use strict";function r(){return"Error"}t.r(o),t.d(o,"default",(function(){return r}))}}]);
-//# sourceMappingURL=8.6cd6a55a.chunk.js.map
