@@ -9,3 +9,7 @@ export const ARTICLES_CLEAR = 'articles/ARTICLES_CLEAR';
 export const TOP_STORIES_FETCH = 'articles/TOP_STORIES_FETCH';
 export const TOP_STORIES_RECEIVED = 'articles/TOP_STORIES_RECEIVED';
 export const TOP_STORIES_CLEAR = 'articles/TOP_STORIES_CLEAR';
+
+export const MOST_POPULAR_FETCH = 'articles/MOST_POPULAR_FETCH';
+export const MOST_POPULAR_RECEIVED = 'articles/MOST_POPULAR_RECEIVED';
+export const MOST_POPULAR_CLEAR = 'articles/MOST_POPULAR_CLEAR';

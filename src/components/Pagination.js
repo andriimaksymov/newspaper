@@ -1,25 +1,27 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
 import history from "../utils/history";
 import { useQuery } from "../utils/hooks";
 
-export default function PaginationRounded({count}) {
+const PaginationRounded = ({ count = 0, pathname }) => {
 	const query = useQuery();
 	const [page, setPage] = useState(0);
-	
+
 	const handleChangePage = (e, page) => {
 		query.set('page', page);
-		
-		history.push({ pathname: '/articles', search: query.toString() });
+
+		history.push({ pathname, search: query.toString() });
 		setPage(page);
 	}
-	
+
 	return (
+		count &&
 		<Stack spacing={2}>
 			<Pagination
 				count={count}
+				page={page}
 				shape="rounded"
 				hideNextButton
 				hidePrevButton
@@ -28,4 +30,6 @@ export default function PaginationRounded({count}) {
 			/>
 		</Stack>
 	)
-}
+};
+
+export default memo(PaginationRounded);

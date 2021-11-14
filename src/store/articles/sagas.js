@@ -1,8 +1,13 @@
 import { all, call, put, takeLatest } from "redux-saga/effects";
 
-import { requestArticles, requestArticlesSections, requestTopStories } from "../../services/api";
+import { requestArticles, requestArticlesSections, requestMostPopular, requestTopStories } from "../../services/api";
 import { fetchingFinished, fetchingStart } from "../common/actions";
-import { articlesReceivedAction, articlesSectionsReceivedAction, topStoriesReceivedAction } from "./actions";
+import {
+	articlesReceivedAction,
+	articlesSectionsReceivedAction,
+	mostPopularReceivedAction,
+	topStoriesReceivedAction
+} from "./actions";
 import * as TYPE from "./actionTypes";
 
 function* getArticles({ params }) {
@@ -30,9 +35,18 @@ function* getTopStories({ params }) {
 
 function* getArticlesSections(params) {
 	try {
-		const res = yield call(requestArticlesSections, params);
+		const { config } = params;
+		const res = yield call(requestArticlesSections, config);
 		yield put(articlesSectionsReceivedAction(res));
-		yield put(fetchingFinished());
+	} catch (e) {
+		console.error(e);
+	}
+}
+
+function* getMostPopularArticles() {
+	try {
+		const res = yield call(requestMostPopular);
+		yield put(mostPopularReceivedAction(res));
 	} catch (e) {
 		console.error(e);
 	}
@@ -43,6 +57,7 @@ function* articlesSaga() {
 		takeLatest(TYPE.ARTICLES_FETCH, getArticles),
 		takeLatest(TYPE.TOP_STORIES_FETCH, getTopStories),
 		takeLatest(TYPE.ARTICLES_SECTIONS_FETCH, getArticlesSections),
+		takeLatest(TYPE.MOST_POPULAR_FETCH, getMostPopularArticles),
 	]);
 }
 

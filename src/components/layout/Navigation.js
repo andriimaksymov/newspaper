@@ -13,6 +13,7 @@ const useStyles = makeStyles({
 		textDecoration: 'none',
 		textTransform: 'uppercase',
 		padding: '0.5rem 1rem',
+		color: 'inherit'
 	}
 });
 

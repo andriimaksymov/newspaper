@@ -12,6 +12,10 @@ const initialState = {
 	top_stories: {
 		list: null,
 		count: 0
+	},
+	most_popular: {
+		list: null,
+		count: 0
 	}
 }
 
@@ -61,6 +65,22 @@ export default function articlesReducer(state = initialState, { type, data }) {
 			return {
 				...state,
 				top_stories: {
+					list: null,
+					count: 0,
+				}
+			}
+		case TYPE.MOST_POPULAR_RECEIVED:
+			return {
+				...state,
+				most_popular: {
+					list: data.results,
+					count: data.num_results,
+				}
+			}
+		case TYPE.MOST_POPULAR_CLEAR:
+			return {
+				...state,
+				most_popular: {
 					list: null,
 					count: 0,
 				}

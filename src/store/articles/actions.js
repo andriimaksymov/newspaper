@@ -11,3 +11,7 @@ export const articlesClearAction = () => ({ type: TYPE.ARTICLES_CLEAR });
 export const topStoriesFetchAction = params => ({ type: TYPE.TOP_STORIES_FETCH, params });
 export const topStoriesReceivedAction = data => ({ type: TYPE.TOP_STORIES_RECEIVED, data });
 export const topStoriesClearAction = () => ({ type: TYPE.TOP_STORIES_CLEAR });
+
+export const mostPopularFetchAction = params => ({ type: TYPE.MOST_POPULAR_FETCH, params });
+export const mostPopularReceivedAction = data => ({ type: TYPE.MOST_POPULAR_RECEIVED, data });
+export const mostPopularClearAction = () => ({ type: TYPE.MOST_POPULAR_CLEAR });

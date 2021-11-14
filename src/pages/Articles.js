@@ -3,57 +3,60 @@ import { useLocation } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import Grid from '@mui/material/Grid';
 
-import { articlesClearAction, articlesFetchAction } from "../store/articles/actions";
+import {
+	articlesClearAction,
+	articlesFetchAction,
+	topStoriesClearAction,
+	topStoriesFetchAction
+} from "../store/articles/actions";
 import { useDeepEqualMemo, useQuery } from "../utils/hooks";
+import routes from "../utils/routes";
 import Layout from "../components/layout";
 import PageHeader from "../components/PageHeader";
-import ArticleItem from "../components/ArticleItem";
 import Pagination from "../components/Pagination";
-import ArticleItemSkeleton from "../components/ArticleItemSkeleton";
 import TopStories from "../components/TopStories";
+import ArticleList from "../components/ArticleList";
 
 export default function Articles({ match }) {
 	const type = match.params.slug_name;
+	const dispatch = useDispatch();
+	const { articles, top_stories } = useSelector(({ articles }) => ({
+		articles: articles.articles,
+		top_stories: articles.top_stories,
+	}));
 	const title = type.charAt(0).toUpperCase() + type.slice(1);
+	const [count, setCount] = useState(0);
 	const query = useQuery();
 	const location = useLocation();
-	const dispatch = useDispatch();
-	const { articles } = useSelector(({ articles }) => ({
-		articles: articles.articles,
-	}));
-	const [count, setCount] = useState(0);
 	const config = useDeepEqualMemo({ ...(query.get("page") && { offset: query.get("page") }) });
-	
+
 	useEffect(() => {
 		dispatch(articlesFetchAction({ type, config }));
-		
-		return () => dispatch(articlesClearAction());
+		dispatch(topStoriesFetchAction({ type: "home" }));
+
+		return () => {
+			dispatch(articlesClearAction());
+			dispatch(topStoriesClearAction());
+		}
 	}, [dispatch, type, config, location]);
+
 	useEffect(() => setCount(Math.round(articles.count / 20)), [articles.count]);
-	
+
 	return (
 		<Layout>
-			<PageHeader title={title} />
-			<Grid container spacing={3}>
-				<Grid item xs={12} md={9}>
-					{
-						articles.list
-							? articles.list.map((article, key) =>
-								<ArticleItem
-									key={key}
-									title={article.title}
-									section={article.section}
-									description={article.abstract}
-									published_date={article.published_date}
-									image={article.multimedia?.[3]?.url}
-								/>
-							)
-							: [1, 2, 3].map(i => <ArticleItemSkeleton key={i} />)
-					}
-					{articles.count > 20 && <Pagination count={count} />}
+			<Grid container spacing={5}>
+				<Grid item xs={12} md={8}>
+					<PageHeader title={title} />
+					<ArticleList
+						list={articles.list}
+					/>
+					<Pagination
+						count={count}
+						pathname={routes.articles(type)}
+					/>
 				</Grid>
-				<Grid item xs={12} md={3}>
-					<TopStories />
+				<Grid item xs={12} md={4}>
+					<TopStories list={top_stories} />
 				</Grid>
 			</Grid>
 		</Layout>

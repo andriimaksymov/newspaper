@@ -1,9 +1,10 @@
 import Layout from "../components/layout";
+import HomeSlider from "../components/HomeSlider";
 
 export default function Home() {
 	return (
 		<Layout>
-			Home page
+			<HomeSlider/>
 		</Layout>
 	)
 }

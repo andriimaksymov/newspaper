@@ -40,7 +40,7 @@ export default function ArticleItem({ title, description, image, published_date,
 	
 	return (
 		<div className={classes.articleItem}>
-			<Grid container spacing={3}>
+			<Grid container spacing={2}>
 				<Grid item xs={8} md>
 					<Typography variant="h6" gutterBottom>
 						{title}
