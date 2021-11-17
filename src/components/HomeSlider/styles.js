@@ -23,7 +23,6 @@ export const useStyles = makeStyles(theme => ({
 		left: '50%',
 		width: '90vw',
 		height: '100%',
-		zIndex: 1,
 		transform: 'translateX(-50%)',
 		'& $sliderButton': {
 			position: 'absolute',

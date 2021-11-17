@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import history from "./utils/history";
 import Default from "./components/Default";
 import ErrorBoundary from "./components/ErrorBoundary";
 import routes from "./utils/routes";
@@ -13,7 +12,7 @@ const Error = lazy(() => import("./pages/Error"));
 export default function App() {
   return (
     <ErrorBoundary>
-      <Router history={history}>
+      <Router>
         <Suspense fallback={<Default />}>
           <Switch>
             <Route exact path={routes.home} component={Home} />

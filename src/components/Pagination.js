@@ -1,12 +1,13 @@
 import { memo, useState } from "react";
+import { useHistory } from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
-import history from "../utils/history";
 import { useQuery } from "../utils/hooks";
 
 const PaginationRounded = ({ count = 0, pathname }) => {
 	const query = useQuery();
+	let history = useHistory();
 	const [page, setPage] = useState(0);
 
 	const handleChangePage = (e, page) => {

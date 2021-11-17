@@ -1,6 +1,6 @@
 const routes = {
-	home: '/',
-	articles: slug_name => `/articles/${slug_name}`,
+	home: '/newspaper',
+	articles: slug_name => `/newspaper/articles/${slug_name}`,
 	
 };
 
