@@ -22,11 +22,16 @@ const initialState = {
 export default function articlesReducer(state = initialState, { type, data }) {
 	switch (type) {
 		case TYPE.ARTICLES_RECEIVED:
+			console.log(data);
 			return {
 				...state,
 				articles: {
-					list: data.results,
-					count: data.num_results,
+					...state.articles,
+					[data.type]: {
+						...state.articles[data.type],
+						list: data.results,
+						count: data.num_results,
+					}
 				},
 			}
 		case TYPE.ARTICLES_CLEAR:

@@ -1,4 +1,4 @@
-import { all, call, put, takeLatest } from "redux-saga/effects";
+import { all, call, takeEvery, put, takeLatest } from "redux-saga/effects";
 
 import { requestArticles, requestArticlesSections, requestMostPopular, requestTopStories } from "../../services/api";
 import { fetchingFinished, fetchingStart } from "../common/actions";
@@ -15,7 +15,7 @@ function* getArticles({ params }) {
 		const { type, config } = params;
 		yield put(fetchingStart());
 		const res = yield call(requestArticles, type, config);
-		yield put(articlesReceivedAction(res));
+		yield put(articlesReceivedAction({ type, ...res }));
 		yield put(fetchingFinished());
 	} catch (e) {
 		console.error(e);
@@ -54,7 +54,7 @@ function* getMostPopularArticles() {
 
 function* articlesSaga() {
 	yield all([
-		takeLatest(TYPE.ARTICLES_FETCH, getArticles),
+		takeEvery(TYPE.ARTICLES_FETCH, getArticles),
 		takeLatest(TYPE.TOP_STORIES_FETCH, getTopStories),
 		takeLatest(TYPE.ARTICLES_SECTIONS_FETCH, getArticlesSections),
 		takeLatest(TYPE.MOST_POPULAR_FETCH, getMostPopularArticles),
