@@ -1,26 +1,32 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import { articlesSectionsFetchAction } from "./store/articles/actions";
+import routes from "./utils/routes";
 import Default from "./components/Default";
 import ErrorBoundary from "./components/ErrorBoundary";
-import routes from "./utils/routes";
 
 const Home = lazy(() => import("./pages/Home"));
 const Articles = lazy(() => import("./pages/Articles"));
 const Error = lazy(() => import("./pages/Error"));
 
 export default function App() {
-  return (
-    <ErrorBoundary>
-      <Router>
-        <Suspense fallback={<Default />}>
-          <Switch>
-            <Route exact path={routes.home} component={Home} />
-            <Route path={routes.articles(":slug_name")} component={Articles} />
-            <Route path="*" component={Error} />
-          </Switch>
-        </Suspense>
-      </Router>
-    </ErrorBoundary>
-  );
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(articlesSectionsFetchAction());
+    }, [dispatch]);
+    return (
+        <ErrorBoundary>
+            <Router>
+                <Suspense fallback={<Default />}>
+                    <Switch>
+                        <Route exact path={routes.home} component={Home} />
+                        <Route path={routes.articles(":slug_name")} component={Articles} />
+                        <Route path="*" component={Error} />
+                    </Switch>
+                </Suspense>
+            </Router>
+        </ErrorBoundary>
+    );
 }

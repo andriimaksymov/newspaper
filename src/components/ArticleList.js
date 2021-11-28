@@ -2,9 +2,9 @@ import { memo } from "react";
 import ArticleItem from "./ArticleItem";
 import ArticleItemSkeleton from "./ArticleItemSkeleton";
 
-const ArticleList = ({ list }) => {
+const ArticleList = ({ list, fetching }) => {
 	return (
-		list
+		list && !fetching
 			? list.map((article, key) =>
 				<ArticleItem
 					key={key}

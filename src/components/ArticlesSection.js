@@ -1,50 +1,50 @@
-import { useEffect, memo } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Typography from "@mui/material/Typography";
-import { articlesFetchAction } from "../store/articles/actions";
-import ArticleList from "./ArticleList";
+import { useEffect, memo, useState } from "react";
 import { makeStyles } from "@mui/styles";
+import { useDispatch, useSelector } from "react-redux";
 
-const types = {
-    books: 'Книги',
-    science: 'Наука',
-};
+import { articlesFetchAction, articlesSectionsClearAction } from "../store/articles/actions";
+import ArticleList from "./ArticleList";
+import PageHeader from "./PageHeader";
+import { useDeepEqualMemo, useQuery } from "../utils/hooks";
+import routes from "../utils/routes";
+import Pagination from "./Pagination";
 
 const useStyles = makeStyles({
     wrap: {
         padding: '30px 0',
     },
-    title: {
-        display: 'inline-block',
-        position: 'relative',
-        fontSize: 30,
-        marginBottom: '20px !important',
-        fontWeight: 400,
-        borderBottom: '1px solid #222',
-        '&::before': {
-            position: 'absolute',
-            content: "",
-            height: 1,
-            background: '#777',
-        },
-    },
 });
 
 const ArticlesSection = ({ type }) => {
+    const query = useQuery();
     const classes = useStyles();
     const dispatch = useDispatch();
-    const { articles } = useSelector(({ articles }) => ({
+    const [count, setCount] = useState(0);
+    const params = useDeepEqualMemo({ offset: query.get("page") || 10 });
+
+    const { articles, fetching } = useSelector(({ articles, common }) => ({
+        fetching: common.fetching,
         articles: articles.articles[type],
     }));
 
+    useEffect(() => setCount(Math.round(articles?.count / 20)), [articles?.count]);
+
+
     useEffect(() => {
-        dispatch(articlesFetchAction({ type, config: { params: { limit: 10 } } }));
-    }, [type]);
+        dispatch(articlesFetchAction({ type, config: { params } }));
+
+        return () => dispatch(articlesSectionsClearAction());
+    }, [dispatch, type, params]);
 
     return (
         <div className={classes.wrap}>
-            <Typography component="h3" className={classes.title}>{types[type]}</Typography>
-            <ArticleList list={articles?.list} />
+            <PageHeader title={type} />
+            <ArticleList fetching={fetching} list={articles?.list} />
+            <Pagination
+                count={count}
+                queryPage={params.offset}
+                pathname={routes.articles(type)}
+            />
         </div>
     );
 };

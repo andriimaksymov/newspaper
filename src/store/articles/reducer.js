@@ -22,7 +22,6 @@ const initialState = {
 export default function articlesReducer(state = initialState, { type, data }) {
 	switch (type) {
 		case TYPE.ARTICLES_RECEIVED:
-			console.log(data);
 			return {
 				...state,
 				articles: {
@@ -55,7 +54,6 @@ export default function articlesReducer(state = initialState, { type, data }) {
 				...state,
 				sections: {
 					list: null,
-					count: 0,
 				}
 			}
 		case TYPE.TOP_STORIES_RECEIVED:

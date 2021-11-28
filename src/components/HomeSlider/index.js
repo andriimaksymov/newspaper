@@ -68,7 +68,7 @@ export default function HomeSlider() {
 										<div className={classes.slideContent}>
 											<Typography gutterBottom component="span" className={classes.caption}>{story.section}</Typography>
 											<Typography gutterBottom variant="h5" component="h2">{story.title}</Typography>
-											<Typography gutterBottom variant="body2">{story.abstract} <a href={story.url} target="_blank">read
+											<Typography gutterBottom variant="body2">{story.abstract} <a href={story.url} rel="noreferrer" target="_blank">read
 												more</a></Typography>
 											<Box mt={2}>
 												<Typography variant="body1">{story.byline}</Typography>
