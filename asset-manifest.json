@@ -2,20 +2,20 @@
   "files": {
     "static/js/0.57b82116.chunk.js": "/newspaper/static/js/0.57b82116.chunk.js",
     "static/js/0.57b82116.chunk.js.map": "/newspaper/static/js/0.57b82116.chunk.js.map",
-    "main.js": "/newspaper/static/js/main.facd646b.chunk.js",
-    "main.js.map": "/newspaper/static/js/main.facd646b.chunk.js.map",
-    "runtime-main.js": "/newspaper/static/js/runtime-main.96620c54.js",
-    "runtime-main.js.map": "/newspaper/static/js/runtime-main.96620c54.js.map",
+    "main.js": "/newspaper/static/js/main.98245c28.chunk.js",
+    "main.js.map": "/newspaper/static/js/main.98245c28.chunk.js.map",
+    "runtime-main.js": "/newspaper/static/js/runtime-main.edd9aaab.js",
+    "runtime-main.js.map": "/newspaper/static/js/runtime-main.edd9aaab.js.map",
     "static/js/3.6851d745.chunk.js": "/newspaper/static/js/3.6851d745.chunk.js",
     "static/js/3.6851d745.chunk.js.map": "/newspaper/static/js/3.6851d745.chunk.js.map",
     "static/css/4.ad45b364.chunk.css": "/newspaper/static/css/4.ad45b364.chunk.css",
     "static/js/4.df0db774.chunk.js": "/newspaper/static/js/4.df0db774.chunk.js",
     "static/js/4.df0db774.chunk.js.map": "/newspaper/static/js/4.df0db774.chunk.js.map",
     "static/css/5.cde02be4.chunk.css": "/newspaper/static/css/5.cde02be4.chunk.css",
-    "static/js/5.9a133988.chunk.js": "/newspaper/static/js/5.9a133988.chunk.js",
-    "static/js/5.9a133988.chunk.js.map": "/newspaper/static/js/5.9a133988.chunk.js.map",
-    "static/js/6.842c9eff.chunk.js": "/newspaper/static/js/6.842c9eff.chunk.js",
-    "static/js/6.842c9eff.chunk.js.map": "/newspaper/static/js/6.842c9eff.chunk.js.map",
+    "static/js/5.d8f17ca2.chunk.js": "/newspaper/static/js/5.d8f17ca2.chunk.js",
+    "static/js/5.d8f17ca2.chunk.js.map": "/newspaper/static/js/5.d8f17ca2.chunk.js.map",
+    "static/js/6.bdb478f2.chunk.js": "/newspaper/static/js/6.bdb478f2.chunk.js",
+    "static/js/6.bdb478f2.chunk.js.map": "/newspaper/static/js/6.bdb478f2.chunk.js.map",
     "static/js/7.e7f6c29d.chunk.js": "/newspaper/static/js/7.e7f6c29d.chunk.js",
     "static/js/7.e7f6c29d.chunk.js.map": "/newspaper/static/js/7.e7f6c29d.chunk.js.map",
     "static/js/8.89c08e5b.chunk.js": "/newspaper/static/js/8.89c08e5b.chunk.js",
@@ -27,8 +27,8 @@
     "static/js/3.6851d745.chunk.js.LICENSE.txt": "/newspaper/static/js/3.6851d745.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.96620c54.js",
+    "static/js/runtime-main.edd9aaab.js",
     "static/js/3.6851d745.chunk.js",
-    "static/js/main.facd646b.chunk.js"
+    "static/js/main.98245c28.chunk.js"
   ]
 }
