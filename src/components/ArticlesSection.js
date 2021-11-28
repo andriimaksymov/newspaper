@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     },
 });
 
-const ArticlesSection = ({ type }) => {
+const ArticlesSection = ({ type, pagination = true }) => {
     const query = useQuery();
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -40,11 +40,14 @@ const ArticlesSection = ({ type }) => {
         <div className={classes.wrap}>
             <PageHeader title={type} />
             <ArticleList fetching={fetching} list={articles?.list} />
-            <Pagination
-                count={count}
-                queryPage={params.offset}
-                pathname={routes.articles(type)}
-            />
+            {
+                pagination &&
+                <Pagination
+                    count={count}
+                    queryPage={params.offset}
+                    pathname={routes.articles(type)}
+                />
+            }
         </div>
     );
 };

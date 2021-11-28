@@ -11,10 +11,10 @@ export default function Home() {
             <div>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <ArticlesSection type="books" />
+                        <ArticlesSection pagination={false} type="books" />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <ArticlesSection type="science" />
+                        <ArticlesSection pagination={false} type="science" />
                     </Grid>
                 </Grid>
             </div>
