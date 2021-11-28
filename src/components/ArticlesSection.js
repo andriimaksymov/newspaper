@@ -2,7 +2,7 @@ import { useEffect, memo, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { useDispatch, useSelector } from "react-redux";
 
-import { articlesFetchAction, articlesSectionsClearAction } from "../store/articles/actions";
+import { articlesClearAction, articlesFetchAction } from "../store/articles/actions";
 import ArticleList from "./ArticleList";
 import PageHeader from "./PageHeader";
 import { useDeepEqualMemo, useQuery } from "../utils/hooks";
@@ -33,7 +33,7 @@ const ArticlesSection = ({ type }) => {
     useEffect(() => {
         dispatch(articlesFetchAction({ type, config: { params } }));
 
-        return () => dispatch(articlesSectionsClearAction());
+        return () => dispatch(articlesClearAction());
     }, [dispatch, type, params]);
 
     return (

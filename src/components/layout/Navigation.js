@@ -28,6 +28,7 @@ export default function Navigation() {
         const list = cloneDeep(section_list)?.slice(0, 7);
         setNav(list);
     }, [section_list]);
+    console.log(section_list);
 
     return (
         <nav className={classes.nav}>
