@@ -20,7 +20,7 @@ const ArticlesSection = ({ type, pagination = true }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const [count, setCount] = useState(0);
-    const params = useDeepEqualMemo({ offset: query.get("page") || 10 });
+    const params = useDeepEqualMemo({ offset: query.get("page"), limit: pagination ? 20 : 10 });
 
     const { articles, fetching } = useSelector(({ articles, common }) => ({
         fetching: common.fetching,
@@ -28,7 +28,6 @@ const ArticlesSection = ({ type, pagination = true }) => {
     }));
 
     useEffect(() => setCount(Math.round(articles?.count / 20)), [articles?.count]);
-
 
     useEffect(() => {
         dispatch(articlesFetchAction({ type, config: { params } }));

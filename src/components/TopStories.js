@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -41,7 +41,7 @@ const TopStories = () => {
     const top_stories = useSelector(({ articles }) => articles.top_stories);
 
     useEffect(() => {
-        dispatch(topStoriesFetchAction({ type: "home" }));
+        dispatch(topStoriesFetchAction({ type: "home", config: {params: { limit: 6 }} }));
 
         return () => dispatch(topStoriesClearAction());
     }, [dispatch]);
@@ -79,4 +79,4 @@ const TopStories = () => {
     );
 };
 
-export default memo(TopStories);
+export default TopStories;
