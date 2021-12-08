@@ -4,8 +4,8 @@
     "static/js/0.57b82116.chunk.js.map": "/newspaper/static/js/0.57b82116.chunk.js.map",
     "main.js": "/newspaper/static/js/main.98245c28.chunk.js",
     "main.js.map": "/newspaper/static/js/main.98245c28.chunk.js.map",
-    "runtime-main.js": "/newspaper/static/js/runtime-main.03b53c8a.js",
-    "runtime-main.js.map": "/newspaper/static/js/runtime-main.03b53c8a.js.map",
+    "runtime-main.js": "/newspaper/static/js/runtime-main.72be1dcf.js",
+    "runtime-main.js.map": "/newspaper/static/js/runtime-main.72be1dcf.js.map",
     "static/js/3.6851d745.chunk.js": "/newspaper/static/js/3.6851d745.chunk.js",
     "static/js/3.6851d745.chunk.js.map": "/newspaper/static/js/3.6851d745.chunk.js.map",
     "static/css/4.ad45b364.chunk.css": "/newspaper/static/css/4.ad45b364.chunk.css",
@@ -14,8 +14,8 @@
     "static/css/5.cde02be4.chunk.css": "/newspaper/static/css/5.cde02be4.chunk.css",
     "static/js/5.362484be.chunk.js": "/newspaper/static/js/5.362484be.chunk.js",
     "static/js/5.362484be.chunk.js.map": "/newspaper/static/js/5.362484be.chunk.js.map",
-    "static/js/6.9170ad5e.chunk.js": "/newspaper/static/js/6.9170ad5e.chunk.js",
-    "static/js/6.9170ad5e.chunk.js.map": "/newspaper/static/js/6.9170ad5e.chunk.js.map",
+    "static/js/6.dfdc3611.chunk.js": "/newspaper/static/js/6.dfdc3611.chunk.js",
+    "static/js/6.dfdc3611.chunk.js.map": "/newspaper/static/js/6.dfdc3611.chunk.js.map",
     "static/js/7.e7f6c29d.chunk.js": "/newspaper/static/js/7.e7f6c29d.chunk.js",
     "static/js/7.e7f6c29d.chunk.js.map": "/newspaper/static/js/7.e7f6c29d.chunk.js.map",
     "static/js/8.89c08e5b.chunk.js": "/newspaper/static/js/8.89c08e5b.chunk.js",
@@ -27,7 +27,7 @@
     "static/js/3.6851d745.chunk.js.LICENSE.txt": "/newspaper/static/js/3.6851d745.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.03b53c8a.js",
+    "static/js/runtime-main.72be1dcf.js",
     "static/js/3.6851d745.chunk.js",
     "static/js/main.98245c28.chunk.js"
   ]
