@@ -41,7 +41,7 @@ const TopStories = () => {
     const top_stories = useSelector(({ articles }) => articles.top_stories);
 
     useEffect(() => {
-        dispatch(topStoriesFetchAction({ type: "home", config: {params: { limit: 6 }} }));
+        dispatch(topStoriesFetchAction({ type: "home" }));
 
         return () => dispatch(topStoriesClearAction());
     }, [dispatch]);
