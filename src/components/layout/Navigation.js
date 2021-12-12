@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import routes from "../../utils/routes";
 import { makeStyles } from "@mui/styles";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { cloneDeep } from "lodash";
+import Grid from "@mui/material/Grid";
+import Skeleton from "@mui/material/Skeleton";
+import routes from "../../utils/routes";
+import { navigationSectionsList } from "../../store/articles/articleSlice";
 
 const useStyles = makeStyles({
     nav: {
@@ -18,27 +19,40 @@ const useStyles = makeStyles({
         padding: '0.5rem 1rem',
         color: 'inherit',
     },
+    loader: {
+        display: 'inline-block !important',
+        width: 120,
+    },
 });
 
 export default function Navigation() {
     const classes = useStyles();
-    const [nav, setNav] = useState([]);
-    const section_list = useSelector(state => state.articles.sections.list);
-    useEffect(() => {
-        const list = cloneDeep(section_list)?.slice(0, 7);
-        setNav(list);
-    }, [section_list]);
+    const section_list = useSelector(navigationSectionsList);
 
     return (
         <nav className={classes.nav}>
-            <Link className={classes.link} to={routes.home}>Home</Link>
-            <Link className={classes.link} to={routes.articles("all")}>All</Link>
             {
-                nav?.map(item =>
-                    <Link key={item.section} className={classes.link} to={routes.articles(item.section)}>
-                        {item.display_name}
-                    </Link>,
-                )
+                section_list
+                    ? <>
+                        <Link className={classes.link} to={routes.home}>Home</Link>
+                        <Link className={classes.link} to={routes.articles("all")}>All</Link>
+                        {section_list.map(item =>
+                            <Link key={item.section} className={classes.link} to={routes.articles(item.section)}>
+                                {item.display_name}
+                            </Link>,
+                        )}
+                    </>
+                    : <Grid container spacing={3}>
+                        <Grid item xs={2}>
+                            <Skeleton height="20" />
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Skeleton height="20" />
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Skeleton height="20" />
+                        </Grid>
+                    </Grid>
             }
         </nav>
     );

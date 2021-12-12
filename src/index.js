@@ -4,10 +4,10 @@ import { Provider } from 'react-redux'
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 
+import theme from "./styles/theme";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store'
-import theme from "./styles/theme";
 
 ReactDOM.render(
 	<React.StrictMode>
