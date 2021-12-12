@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 import Skeleton from "@mui/material/Skeleton";
 import routes from "../../utils/routes";
+import IconButton from "@mui/material/IconButton";
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { navigationSectionsList } from "../../store/articles/articleSlice";
 
 const useStyles = makeStyles({
@@ -41,6 +43,9 @@ export default function Navigation() {
                                 {item.display_name}
                             </Link>,
                         )}
+                        <IconButton component={Link} to={routes.categories}>
+                            <MoreHorizIcon />
+                        </IconButton>
                     </>
                     : <Grid container spacing={3}>
                         <Grid item xs={2}>
