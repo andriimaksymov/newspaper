@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/styles/swiper.css"],"names":[],"mappings":"AAAA,8GAEI,YACJ","file":"5.cde02be4.chunk.css","sourcesContent":[".swiper-pagination-fraction, .swiper-pagination-custom,\r\n.swiper-container-horizontal > .swiper-pagination-bullets {\r\n    bottom: -5rem;\r\n}"]}
