@@ -4,8 +4,8 @@
     "static/js/0.2f98fe49.chunk.js.map": "/newspaper/static/js/0.2f98fe49.chunk.js.map",
     "static/js/1.7317e6c2.chunk.js": "/newspaper/static/js/1.7317e6c2.chunk.js",
     "static/js/1.7317e6c2.chunk.js.map": "/newspaper/static/js/1.7317e6c2.chunk.js.map",
-    "main.js": "/newspaper/static/js/main.8100a4a5.chunk.js",
-    "main.js.map": "/newspaper/static/js/main.8100a4a5.chunk.js.map",
+    "main.js": "/newspaper/static/js/main.07c97b33.chunk.js",
+    "main.js.map": "/newspaper/static/js/main.07c97b33.chunk.js.map",
     "runtime-main.js": "/newspaper/static/js/runtime-main.c84618f8.js",
     "runtime-main.js.map": "/newspaper/static/js/runtime-main.c84618f8.js.map",
     "static/js/4.9d09cb00.chunk.js": "/newspaper/static/js/4.9d09cb00.chunk.js",
@@ -42,6 +42,6 @@
   "entrypoints": [
     "static/js/runtime-main.c84618f8.js",
     "static/js/4.9d09cb00.chunk.js",
-    "static/js/main.8100a4a5.chunk.js"
+    "static/js/main.07c97b33.chunk.js"
   ]
 }
