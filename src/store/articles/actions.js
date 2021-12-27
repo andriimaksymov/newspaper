@@ -15,3 +15,7 @@ export const topStoriesClearAction = () => ({ type: TYPE.TOP_STORIES_CLEAR });
 export const mostPopularFetchAction = params => ({ type: TYPE.MOST_POPULAR_FETCH, params });
 export const mostPopularReceivedAction = data => ({ type: TYPE.MOST_POPULAR_RECEIVED, data });
 export const mostPopularClearAction = () => ({ type: TYPE.MOST_POPULAR_CLEAR });
+
+export const searchFetchAction = params => ({ type: TYPE.SEARCH_ARTICLES_FETCH, params });
+export const searchReceivedAction = data => ({ type: TYPE.SEARCH_ARTICLES_RECEIVED, data });
+export const searchClearAction = () => ({ type: TYPE.SEARCH_ARTICLES_CLEAR });

@@ -9,7 +9,7 @@ import routes from "../utils/routes";
 const useStyles = makeStyles({
 	articleItem: {
 		'& + $articleItem': {
-			marginTop: 20
+			marginTop: 30
 		},
 		'& $sectionLink': {
 			marginLeft: 10
@@ -18,12 +18,8 @@ const useStyles = makeStyles({
 	imageWrap: {
 		position: 'relative',
 		width: 190,
+		height: '100%',
 		overflow: 'hidden',
-		'&::after': {
-			content: "''",
-			display: 'block',
-			paddingBottom: '56.25%',
-		},
 		'& img': {
 			position: 'absolute',
 			top: 0,

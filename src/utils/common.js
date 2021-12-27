@@ -1,0 +1,1 @@
+export const setPagesCount = count => Math.round(count / 20) > 200 ? 200 : Math.round(count / 20);

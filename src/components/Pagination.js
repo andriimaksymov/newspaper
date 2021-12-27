@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 const PaginationRounded = ({ count = 0, pathname }) => {
     const classes = useStyles();
     const query = useQuery();
-    let history = useHistory();
+    const history = useHistory();
     const [page, setPage] = useState(1);
 
     const handleChangePage = (e, page) => {

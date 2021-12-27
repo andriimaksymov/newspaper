@@ -29,7 +29,9 @@ export default function HomeSlider() {
     useEffect(() => {
         dispatch(mostPopularFetchAction());
 
-        return () => dispatch(mostPopularClearAction());
+        return () => {
+            dispatch(mostPopularClearAction());
+        }
     }, [dispatch]);
 
     return (
