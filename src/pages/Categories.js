@@ -7,7 +7,7 @@ import { categoriesData } from "../utils/data";
 import routes from "../utils/routes";
 import Layout from "../components/layout";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   categoryWrap: {
     display: 'block',
     color: 'inherit',
@@ -18,14 +18,14 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 30,
     backgroundColor: '#f3f3f3',
     '&:hover': {
-      color: theme.palette.primary.main,
+      color: 'hsl(90, 50%, 53%)',
       boxShadow: '0 5px 5px rgba(0, 0, 0, .1)',
     },
   },
   categoryIcon: {
     marginBottom: 20,
   },
-}));
+});
 
 export default function Categories() {
   const classes = useStyles();
