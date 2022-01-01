@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import Container from "@mui/material/Container";
-import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import { makeStyles } from "@mui/styles";
 
 import routes from "../../utils/routes";
-import Navigation from "./Navigation";
 import Search from "../Search";
 
 const useStyles = makeStyles({
@@ -33,9 +31,7 @@ export default function Header() {
             <Search />
           </Grid>
         </Grid>
-        <Navigation />
       </Container>
-      <Divider />
     </header>
   );
 }

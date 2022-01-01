@@ -1,64 +1,69 @@
-import { Link } from "react-router-dom";
-import { makeStyles } from "@mui/styles";
+import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Grid from "@mui/material/Grid";
+import { styled } from "@mui/material/styles";
+import Stack from "@mui/material/Stack";
 import Skeleton from "@mui/material/Skeleton";
-import routes from "../../utils/routes";
 import IconButton from "@mui/material/IconButton";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import Container from "@mui/material/Container";
 import { navigationSectionsList } from "../../store/articles/articleSlice";
+import routes from "../../utils/routes";
 
-const useStyles = makeStyles({
-    nav: {
-        margin: '2rem -1rem 0',
-        padding: '.5rem 0',
-    },
-    link: {
-        fontSize: '.8rem',
-        letterSpacing: '.05rem',
-        textDecoration: 'none',
-        textTransform: 'uppercase',
-        padding: '0.5rem 1rem',
-        color: 'inherit',
-    },
-    loader: {
-        display: 'inline-block !important',
-        width: 120,
-    },
+const NavigationWrapper = styled('div')({
+  position: 'sticky',
+  top: 0,
+  paddingTop: 10,
+  paddingBottom: 10,
+  backgroundColor: '#ffffff',
+  borderBottom: '1px solid #efefef',
+  zIndex: 100,
 });
 
-export default function Navigation() {
-    const classes = useStyles();
-    const section_list = useSelector(navigationSectionsList);
+const NavigationNav = styled('nav')({
+  display: 'flex',
+  alignItems: 'center',
+  margin: '0 -1rem',
+});
 
-    return (
-        <nav className={classes.nav}>
-            {
-                section_list
-                    ? <>
-                        <Link className={classes.link} to={routes.home}>Home</Link>
-                        <Link className={classes.link} to={routes.articles("all")}>All</Link>
-                        {section_list.map(item =>
-                            <Link key={item.section} className={classes.link} to={routes.articles(item.section)}>
-                                {item.display_name}
-                            </Link>,
-                        )}
-                        <IconButton component={Link} to={routes.categories}>
-                            <MoreHorizIcon />
-                        </IconButton>
-                    </>
-                    : <Grid container spacing={3}>
-                        <Grid item xs={2}>
-                            <Skeleton height="20" />
-                        </Grid>
-                        <Grid item xs={2}>
-                            <Skeleton height="20" />
-                        </Grid>
-                        <Grid item xs={2}>
-                            <Skeleton height="20" />
-                        </Grid>
-                    </Grid>
-            }
-        </nav>
-    );
+const NavigationNavItem = styled(NavLink)(({ theme }) => ({
+  fontSize: '.8rem',
+  letterSpacing: '.05rem',
+  textDecoration: 'none',
+  textTransform: 'uppercase',
+  padding: '0.5rem 1rem',
+  color: 'inherit',
+  '&.active': {
+    color: theme.palette.primary.main,
+  },
+}));
+
+export default function Navigation() {
+  const section_list = useSelector(navigationSectionsList);
+
+  return (
+    <NavigationWrapper>
+      <Container>
+        {
+          section_list
+            ? <NavigationNav>
+              <NavigationNavItem to={routes.articles("all")}>All</NavigationNavItem>
+              {section_list.map(item =>
+                <NavigationNavItem key={item.section} to={routes.articles(item.section)}>
+                  {item.display_name}
+                </NavigationNavItem>,
+              )}
+              <IconButton size="small" component={Link} to={routes.categories}>
+                <MoreHorizIcon />
+              </IconButton>
+            </NavigationNav>
+            : <Stack direction="row" spacing={2}>
+              <Skeleton variant="rectangular" width={100} height={20} />
+              <Skeleton variant="rectangular" width={100} height={20} />
+              <Skeleton variant="rectangular" width={100} height={20} />
+              <Skeleton variant="rectangular" width={100} height={20} />
+            </Stack>
+        }
+      </Container>
+    </NavigationWrapper>
+  );
 }

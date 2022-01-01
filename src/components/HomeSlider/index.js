@@ -63,6 +63,7 @@ export default function HomeSlider() {
                                         abstract={story.abstract}
                                         byline={story.byline}
                                         url={story.url}
+                                        nytdsection={story.nytdsection}
                                         published_date={story.published_date}
                                     />
                                 </SwiperSlide>,

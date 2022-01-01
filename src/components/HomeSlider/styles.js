@@ -6,16 +6,12 @@ export const useStyles = makeStyles({
     height: 'auto',
   },
   slideContent: {
-    padding: 40,
+    padding: 50,
     height: '100%',
-    backgroundColor: '#f3f3f3',
+    backgroundColor: '#f8f9fa',
   },
   imageWrap: {
     display: "flex",
-  },
-  caption: {
-    fontSize: 14,
-    color: '#808080',
   },
   buttonWrap: {
     position: 'absolute',
@@ -41,5 +37,6 @@ export const useStyles = makeStyles({
   sliderButtonNext: {},
   homeSliderContainer: {
     position: 'relative',
+    marginTop: 30,
   },
 });

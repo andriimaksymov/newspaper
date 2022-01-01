@@ -12,7 +12,7 @@ const ArticleList = ({ list, fetching }) => {
 					section={article.section}
 					description={article.abstract}
 					published_date={article.published_date}
-					image={article.multimedia?.[3]?.url}
+					image={article.multimedia?.[1]?.url}
 				/>
 			)
 			: [1, 2, 3].map(i => <ArticleItemSkeleton key={i} />)
