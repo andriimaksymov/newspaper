@@ -1,6 +1,6 @@
 const routes = {
 	home: '/newspaper',
-	search: params => `/newspaper/search${params}`,
+	search: '/newspaper/search',
 	articles: slug_name => `/newspaper/articles/${slug_name}`,
 	categories: '/newspaper/categories',
 };

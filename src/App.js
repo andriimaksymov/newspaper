@@ -24,7 +24,7 @@ export default function App() {
                 <Suspense fallback={<Default />}>
                     <Switch>
                         <Route exact path={routes.home} component={Home} />
-                        <Route exact path={routes.search('')} component={Search} />
+                        <Route exact path={routes.search} component={Search} />
                         <Route exact path={routes.categories} component={Categories} />
                         <Route exact path={routes.articles(":slug_name")} component={Articles} />
                         <Route path="*" component={Error} />

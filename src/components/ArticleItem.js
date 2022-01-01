@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Moment from "react-moment";
 import { makeStyles } from "@mui/styles";
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import routes from "../utils/routes";
 
 const useStyles = makeStyles({
@@ -17,6 +18,16 @@ const useStyles = makeStyles({
   },
   imageWrap: {
     display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 210,
+    minHeight: 140,
+    backgroundColor: '#f3f2f2',
+    '& .MuiSvgIcon-root': {
+      width: 100,
+      height: 100,
+      color: "#808080",
+    },
   },
   title: {
     display: 'box',
@@ -74,7 +85,11 @@ export default function ArticleItem({ title, description, image, published_date,
         </Grid>
         <Grid item xs={4} md="auto">
           <div className={classes.imageWrap}>
-            <img src={image} alt={title} width={210} />
+            {
+              image
+                ? <img src={image} alt={title} width={210} />
+                : <InsertPhotoIcon />
+            }
           </div>
         </Grid>
       </Grid>

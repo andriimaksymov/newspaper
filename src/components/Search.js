@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useHistory } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import routes from "../utils/routes";
+import { useQuery } from "../utils/hooks";
 
 const SearchField = styled(TextField)({
   '& .MuiInput-root': {
@@ -41,6 +42,7 @@ const SearchForm = styled('form')({
 });
 
 const Search = () => {
+  const query = useQuery();
   const history = useHistory();
 
   const formik = useFormik({
@@ -48,7 +50,8 @@ const Search = () => {
       search: '',
     },
     onSubmit: ({ search }) => {
-      history.push(routes.search(search ? `?query=${search}` : ''));
+      query.set('query', search);
+      history.push({ pathname: routes.search, search: query.toString() });
     },
   });
 
