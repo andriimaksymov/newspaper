@@ -19,7 +19,7 @@ import SlideContent from "./SlideContent";
 
 SwiperCore.use([Navigation, Pagination]);
 
-export default function HomeSlider() {
+export default function MostPopularArticles() {
     const classes = useStyles();
     const navigationPrevRef = useRef(null);
     const navigationNextRef = useRef(null);
