@@ -12,6 +12,7 @@ const useStyles = makeStyles({
   },
   logo: {
     fontSize: '2rem',
+    lineHeight: 1.75,
     textDecoration: 'none',
     color: 'inherit',
   },

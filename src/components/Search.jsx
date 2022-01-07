@@ -13,7 +13,7 @@ const SearchField = styled(TextField)({
     },
   },
   '& .MuiInput-input': {
-    padding: '10px 24px',
+    padding: '13px 20px',
     borderRadius: 30,
     border: 'none',
     background: '#fff',
@@ -27,7 +27,7 @@ const SearchField = styled(TextField)({
 
 const SearchButton = styled(IconButton)(({ theme }) => ({
   color: '#ffffff',
-  padding: '10px 16px',
+  padding: '12px 20px',
   borderRadius: 30,
   backgroundColor: '#000000',
   '&:hover': {
@@ -38,7 +38,7 @@ const SearchButton = styled(IconButton)(({ theme }) => ({
 const SearchForm = styled('form')({
   display: 'grid',
   gridTemplateColumns: '1fr auto',
-  gridGap: 20,
+  gridGap: 10,
 });
 
 const Search = () => {
