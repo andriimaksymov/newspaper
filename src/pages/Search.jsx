@@ -7,8 +7,9 @@ import PageHeader from "../components/PageHeader";
 import ArticleItem from "../components/ArticleItem";
 import Pagination from "../components/Pagination";
 import SortedSelect from "../components/SortedSelect";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { styled } from "@mui/material/styles";
+import DatePicker from "../components/DatePicker";
 
 const sortedList = [
   { value: 'best', label: 'Order by relevance' },
@@ -26,14 +27,17 @@ const SearchFilterWrap = styled('div')({
 const Search = () => {
   const query = useQuery();
   const location = useLocation();
+  const history = useHistory();
   const q = query.get('query');
   const page = query.get('page');
   const sort = query.get('sort');
+  const begin_date = query.get('begin_date');
+  const end_date = query.get('end_date');
   const { list, pages } = useSelector(state => state.articles.search);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(searchFetchAction({ config: { params: { q, page, sort } } }));
+    dispatch(searchFetchAction({ config: { params: { q, page, sort, begin_date, end_date } } }));
 
     return () => {
       dispatch(searchClearAction());
@@ -42,11 +46,18 @@ const Search = () => {
     // eslint-disable-next-line
   }, [dispatch, location]);
 
+  const handleChangeDate = (date ,name) => {
+    query.set(name, date);
+    history.push({ pathname: location.pathname, search: query.toString() });
+  };
+
   return (
     <Layout>
       <PageHeader title="Search" />
       <SearchFilterWrap>
         <SortedSelect sortedList={sortedList} value={sort} />
+        <DatePicker name="begin_date" label="Start date" onChange={handleChangeDate} />
+        <DatePicker name="end_date" label="End date" onChange={handleChangeDate} />
       </SearchFilterWrap>
       {
         list && list.map(item => (
@@ -56,7 +67,7 @@ const Search = () => {
             published_date={item.pub_date}
             title={item.headline.main}
             section={item.section_name}
-            {...(item.multimedia.length && {image: 'https://static01.nyt.com/' + item.multimedia[0]?.url})}
+            {...(item.multimedia.length && { image: 'https://static01.nyt.com/' + item.multimedia[0]?.url })}
           />
         ))
       }
