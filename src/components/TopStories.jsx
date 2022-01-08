@@ -1,11 +1,14 @@
 import { useEffect } from "react";
+import Moment from "react-moment";
 import { useDispatch, useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
-import Moment from "react-moment";
 
 import { topStoriesClearAction, topStoriesFetchAction } from "../store/articles/actions";
+import PropTypes from "prop-types";
+import { getTopStories } from "../store/articles/articleSlice";
+import PageHeader from "./PageHeader";
 
 const useStyles = makeStyles({
   stickyAside: {
@@ -15,10 +18,6 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     maxHeight: '95vh',
     paddingTop: '30px',
-  },
-  header: {
-    marginBottom: '30px !important',
-    fontSize: '20px !important',
   },
   asideList: {
     overflow: 'auto',
@@ -37,11 +36,11 @@ const useStyles = makeStyles({
   },
 });
 
-const TopStories = () => {
+const TopStories = ({ count }) => {
   const type = 'home';
   const dispatch = useDispatch();
   const classes = useStyles();
-  const top_stories = useSelector(({ articles }) => articles.top_stories);
+  const top_stories = useSelector(getTopStories(count));
 
   useEffect(() => {
     dispatch(topStoriesFetchAction({ type }));
@@ -49,16 +48,16 @@ const TopStories = () => {
     return () => {
       dispatch(topStoriesClearAction());
     };
-  }, [dispatch]);
+
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <aside className={classes.stickyAside}>
-      <Typography variant="h6" className={classes.header} component="h4">
-        Popular Posts
-      </Typography>
+      <PageHeader title="Popular Posts"/>
       <div className={classes.asideList}>
         {
-          top_stories && top_stories.list?.map((story, key) =>
+          top_stories?.map((story, key) =>
             <Grid container spacing={1} className={classes.topStory} key={story.url}>
               <Grid item xs="auto">
                 <div className={classes.number}>
@@ -84,6 +83,10 @@ const TopStories = () => {
       </div>
     </aside>
   );
+};
+
+TopStories.propTypes = {
+  count: PropTypes.number,
 };
 
 export default TopStories;

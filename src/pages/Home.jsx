@@ -11,12 +11,12 @@ export default function Home() {
     <Layout>
       <MostPopularArticles />
 
-      <Grid container spacing={4}>
+      <Grid container spacing={5}>
         <Grid item xs={12} md={8}>
           <HomeMovieReviews />
         </Grid>
         <Grid item xs={12} md={4}>
-          <TopStories />
+          <TopStories count={3} />
         </Grid>
       </Grid>
 
@@ -28,6 +28,6 @@ export default function Home() {
           <ArticlesSection pagination={false} type="science" />
         </Grid>
       </Grid>
-      s </Layout>
+    </Layout>
   );
 }

@@ -30,10 +30,16 @@ export const ButtonsWrap = styled('div')({
   transform: 'translateX(-50%)',
 });
 
-export const PrevNextButton = styled(IconButton)((props) => ({
+export const PrevButton = styled(IconButton)({
   position: 'absolute',
   top: '50%',
-  ...(props.prev && { left: -30 }),
-  ...(props.next && { right: -30 }),
+  left: -30,
   transform: 'translateY(-50%)',
-}));
+});
+
+export const NextButton = styled(IconButton)({
+  position: 'absolute',
+  top: '50%',
+  right: -30,
+  transform: 'translateY(-50%)',
+});

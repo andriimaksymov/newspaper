@@ -11,7 +11,7 @@ import 'swiper/swiper-bundle.css';
 
 import { mostPopularClearAction, mostPopularFetchAction, movieReviewsFetchAction } from "../../store/articles/actions";
 import { getMostPopularWithMedia } from "../../store/articles/articleSlice";
-import { ButtonsWrap, PrevNextButton, StyledSwiper, Wrapper } from './styles';
+import { ButtonsWrap, PrevButton, NextButton, StyledSwiper, Wrapper } from './styles';
 import Item from "./Item";
 
 SwiperCore.use([Navigation, Pagination]);
@@ -81,12 +81,12 @@ export default function MostPopularArticles() {
           </Grid>
       }
       <ButtonsWrap>
-        <PrevNextButton prev ref={navigationPrevRef}>
+        <PrevButton ref={navigationPrevRef}>
           <ArrowBackIcon />
-        </PrevNextButton>
-        <PrevNextButton next ref={navigationNextRef}>
+        </PrevButton>
+        <NextButton ref={navigationNextRef}>
           <ArrowForwardIcon />
-        </PrevNextButton>
+        </NextButton>
       </ButtonsWrap>
     </Wrapper>
   );
