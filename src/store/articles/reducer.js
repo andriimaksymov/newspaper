@@ -1,12 +1,15 @@
 import * as TYPE from "./actionTypes";
 import { setPagesCount } from "../../utils/common";
 
+const defaultData = { list: null, count: 0 };
+
 const initialState = {
-  articles: { list: null, count: 0 },
-  sections: { list: null, count: 0 },
-  top_stories: { list: null, count: 0 },
-  most_popular: { list: null, count: 0 },
-  search: { list: null, count: 0 },
+  articles: defaultData,
+  sections: defaultData,
+  top_stories: defaultData,
+  most_popular: defaultData,
+  search: defaultData,
+  movie_reviews: defaultData,
 };
 
 export default function articlesReducer(state = initialState, { type, data }) {
@@ -26,10 +29,7 @@ export default function articlesReducer(state = initialState, { type, data }) {
     case TYPE.ARTICLES_CLEAR:
       return {
         ...state,
-        articles: {
-          list: null,
-          count: 0,
-        },
+        articles: defaultData,
       };
     case TYPE.ARTICLES_SECTIONS_RECEIVED:
       return {
@@ -57,10 +57,7 @@ export default function articlesReducer(state = initialState, { type, data }) {
     case TYPE.TOP_STORIES_CLEAR:
       return {
         ...state,
-        top_stories: {
-          list: null,
-          count: 0,
-        },
+        top_stories: defaultData,
       };
     case TYPE.MOST_POPULAR_RECEIVED:
       return {
@@ -73,10 +70,7 @@ export default function articlesReducer(state = initialState, { type, data }) {
     case TYPE.MOST_POPULAR_CLEAR:
       return {
         ...state,
-        most_popular: {
-          list: null,
-          count: 0,
-        },
+        most_popular: defaultData,
       };
     case TYPE.SEARCH_ARTICLES_RECEIVED:
       return {
@@ -90,10 +84,20 @@ export default function articlesReducer(state = initialState, { type, data }) {
     case TYPE.SEARCH_ARTICLES_CLEAR:
       return {
         ...state,
-        search: {
-          list: null,
-          count: 0,
+        search: defaultData,
+      };
+    case TYPE.MOVIE_REVIEWS_RECEIVED:
+      return {
+        ...state,
+        movie_reviews: {
+          list: data.results,
+          count: data.num_results,
         },
+      };
+    case TYPE.MOVIE_REVIEWS_CLEAR:
+      return {
+        ...state,
+        movie_reviews: defaultData,
       };
     default:
       return state;

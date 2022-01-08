@@ -12,6 +12,10 @@ export const TOP_STORIES_FETCH = section + 'TOP_STORIES_FETCH';
 export const TOP_STORIES_RECEIVED = section + 'TOP_STORIES_RECEIVED';
 export const TOP_STORIES_CLEAR = section + 'TOP_STORIES_CLEAR';
 
+export const MOVIE_REVIEWS_FETCH = section + 'MOVIE_REVIEWS_FETCH';
+export const MOVIE_REVIEWS_RECEIVED = section + 'MOVIE_REVIEWS_RECEIVED';
+export const MOVIE_REVIEWS_CLEAR = section + 'MOVIE_REVIEWS_CLEAR';
+
 export const MOST_POPULAR_FETCH = section + 'MOST_POPULAR_FETCH';
 export const MOST_POPULAR_RECEIVED = section + 'MOST_POPULAR_RECEIVED';
 export const MOST_POPULAR_CLEAR = section + 'MOST_POPULAR_CLEAR';

@@ -3,7 +3,7 @@ import { all, call, takeEvery, put, takeLatest } from "redux-saga/effects";
 import {
   requestArticles,
   requestArticlesSections,
-  requestMostPopular,
+  requestMostPopular, requestMoviesReview,
   requestSearch,
   requestTopStories,
 } from "../../services/api";
@@ -11,7 +11,7 @@ import { fetchingFinished, fetchingStart } from "../common/actions";
 import {
   articlesReceivedAction,
   articlesSectionsReceivedAction,
-  mostPopularReceivedAction, searchReceivedAction,
+  mostPopularReceivedAction, movieReviewsReceivedAction, searchReceivedAction,
   topStoriesReceivedAction,
 } from "./actions";
 import * as TYPE from "./actionTypes";
@@ -68,6 +68,16 @@ function* getSearchArticles({ params }) {
   }
 }
 
+function* getMoviesReviews({ params }) {
+  try {
+    const { type, config } = params;
+    const res = yield call(requestMoviesReview, type, config);
+    yield put(movieReviewsReceivedAction(res));
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 function* articlesSaga() {
   yield all([
     takeEvery(TYPE.ARTICLES_FETCH, getArticlesByType),
@@ -75,6 +85,7 @@ function* articlesSaga() {
     takeLatest(TYPE.ARTICLES_SECTIONS_FETCH, getArticlesSections),
     takeLatest(TYPE.MOST_POPULAR_FETCH, getMostPopularArticles),
     takeLatest(TYPE.SEARCH_ARTICLES_FETCH, getSearchArticles),
+    takeLatest(TYPE.MOVIE_REVIEWS_FETCH, getMoviesReviews),
   ]);
 }
 

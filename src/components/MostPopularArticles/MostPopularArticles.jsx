@@ -9,7 +9,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import 'swiper/swiper-bundle.css';
 
-import { mostPopularClearAction, mostPopularFetchAction } from "../../store/articles/actions";
+import { mostPopularClearAction, mostPopularFetchAction, movieReviewsFetchAction } from "../../store/articles/actions";
 import { getMostPopularWithMedia } from "../../store/articles/articleSlice";
 import { ButtonsWrap, PrevNextButton, StyledSwiper, Wrapper } from './styles';
 import Item from "./Item";
@@ -22,10 +22,9 @@ export default function MostPopularArticles() {
   const navigationNextRef = useRef(null);
   const most_popular = useSelector(getMostPopularWithMedia);
 
-  console.log(most_popular);
-
   useEffect(() => {
     dispatch(mostPopularFetchAction());
+    dispatch(movieReviewsFetchAction({ type: 'all' }));
 
     return () => {
       dispatch(mostPopularClearAction());

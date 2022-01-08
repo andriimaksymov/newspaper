@@ -8,6 +8,10 @@ export const articlesFetchAction = params => ({ type: TYPE.ARTICLES_FETCH, param
 export const articlesReceivedAction = data => ({ type: TYPE.ARTICLES_RECEIVED, data });
 export const articlesClearAction = () => ({ type: TYPE.ARTICLES_CLEAR });
 
+export const movieReviewsFetchAction = params => ({ type: TYPE.MOVIE_REVIEWS_FETCH, params });
+export const movieReviewsReceivedAction = data => ({ type: TYPE.MOVIE_REVIEWS_RECEIVED, data });
+export const movieReviewsClearAction = () => ({ type: TYPE.MOVIE_REVIEWS_CLEAR });
+
 export const topStoriesFetchAction = params => ({ type: TYPE.TOP_STORIES_FETCH, params });
 export const topStoriesReceivedAction = data => ({ type: TYPE.TOP_STORIES_RECEIVED, data });
 export const topStoriesClearAction = () => ({ type: TYPE.TOP_STORIES_CLEAR });
