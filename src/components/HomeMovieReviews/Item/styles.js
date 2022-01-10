@@ -2,7 +2,6 @@ import { styled } from "@mui/styles";
 import { Typography } from "@mui/material";
 
 export const ItemLink = styled('a')(({ size }) => ({
-  textDecoration: 'none',
   color: 'inherit',
   ...(size === 'large' ? {
     display: 'block',

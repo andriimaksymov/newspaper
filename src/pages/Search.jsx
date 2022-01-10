@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Layout from "../components/layout";
 import { useQuery } from "../utils/hooks";
 import { searchClearAction, searchFetchAction } from "../store/articles/actions";
-import PageHeader from "../components/PageHeader";
+import Title from "../components/Title";
 import ArticleItem from "../components/ArticleItem";
 import Pagination from "../components/Pagination";
 import SortedSelect from "../components/SortedSelect";
@@ -53,7 +53,7 @@ const Search = () => {
 
   return (
     <Layout>
-      <PageHeader title="Search" />
+      <Title title="Search" />
       <SearchFilterWrap>
         <SortedSelect sortedList={sortedList} value={sort} />
         <DatePicker name="begin_date" label="Start date" onChange={handleChangeDate} />

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { movieReviewsClearAction, movieReviewsFetchAction } from "../../store/articles/actions";
 import { getHomeMovieReviews } from "../../store/articles/articleSlice";
 import { ReviewsList, ReviewsWrapper } from "./styles";
-import PageHeader from "../PageHeader";
+import Title from "../Title";
 import Item from "./Item";
 
 const HomeMovieReviews = () => {
@@ -23,7 +23,7 @@ const HomeMovieReviews = () => {
 
   return (
     <ReviewsWrapper>
-      <PageHeader title="Movie Reviews" />
+      <Title title="Movie Reviews" />
       <ReviewsList>
         {
           reviews?.map((review, i) => (

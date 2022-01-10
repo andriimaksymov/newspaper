@@ -26,5 +26,6 @@ export const StyledLink = styled('a')(({ theme }) => ({
 }));
 
 export const Caption = styled(Typography)({
-  fontSize: 12
+  color: '#000000',
+  textDecoration: 'none',
 });

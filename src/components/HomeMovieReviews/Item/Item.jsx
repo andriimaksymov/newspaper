@@ -1,6 +1,6 @@
 import { memo } from "react";
 import PropTypes from "prop-types";
-import Moment from "react-moment";
+import StyledDate from "../../StyledDate";
 import { Description, ImageWrap, ItemLink, Title } from "./styles";
 
 const Item = ({ url, size, image, title, description, date, author, section }) => {
@@ -10,13 +10,11 @@ const Item = ({ url, size, image, title, description, date, author, section }) =
         <img src={image} alt={title} />
       </ImageWrap>
       <div>
-        <Title>{title}</Title>
+        <Title variant="h6" gutterBottom>{title}</Title>
         {
           description && <Description variant="body2">{description}</Description>
         }
-        <Moment format="MMMM D, Y">
-          {date}
-        </Moment>
+        <StyledDate date={date} />
       </div>
     </ItemLink>
   );

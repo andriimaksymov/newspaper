@@ -23,6 +23,7 @@ export default function articlesReducer(state = initialState, { type, data }) {
             ...state.articles[data.type],
             list: data.results,
             count: data.num_results,
+            pages: setPagesCount(data.num_results),
           },
         },
       };
@@ -37,6 +38,7 @@ export default function articlesReducer(state = initialState, { type, data }) {
         sections: {
           list: data.results,
           count: data.num_results,
+          pages: setPagesCount(data.num_results),
         },
       };
     case TYPE.ARTICLES_SECTIONS_CLEAR:
@@ -52,6 +54,7 @@ export default function articlesReducer(state = initialState, { type, data }) {
         top_stories: {
           list: data.results,
           count: data.num_results,
+          pages: setPagesCount(data.num_results),
         },
       };
     case TYPE.TOP_STORIES_CLEAR:
@@ -65,6 +68,7 @@ export default function articlesReducer(state = initialState, { type, data }) {
         most_popular: {
           list: data.results,
           count: data.num_results,
+          pages: setPagesCount(data.num_results),
         },
       };
     case TYPE.MOST_POPULAR_CLEAR:

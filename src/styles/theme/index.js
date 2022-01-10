@@ -13,10 +13,42 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'Cabin, sans-serif',
+    body1: {
+      color: "#808080",
+      fontSize: '.9rem',
+    },
     body2: {
       color: "#808080",
+      fontSize: '.8rem',
+    },
+    h1: {
+      lineHeight: 1.2,
+      fontWeight: 500,
+      fontSize: '2.25rem',
+    },
+    h2: {
+      lineHeight: 1.2,
+      fontWeight: 500,
+      fontSize: '1.875rem',
+    },
+    h3: {
+      lineHeight: 1.2,
+      fontWeight: 500,
+      fontSize: '1.5rem',
+    },
+    h4: {
+      lineHeight: 1.2,
+      fontWeight: 500,
+      fontSize: '1.25rem',
+    },
+    h5: {
+      lineHeight: 1.2,
+      fontWeight: 500,
+      fontSize: '1.125rem',
     },
     h6: {
+      lineHeight: 1.2,
+      fontWeight: 500,
       fontSize: '1rem',
     },
   },
@@ -39,6 +71,7 @@ const theme = createTheme({
         },
         body: {
           color: '#000000',
+          fontWeight: '300',
         },
         header: {
           flexShrink: 0,
@@ -48,6 +81,14 @@ const theme = createTheme({
         },
         main: {
           flexGrow: 1,
+        },
+        a: {
+          color: 'inherit',
+          textDecoration: 'none',
+          '&:hover': {
+            textDecoration: 'none',
+            color: 'hsl(90, 50%, 53%)',
+          },
         },
       },
     },
