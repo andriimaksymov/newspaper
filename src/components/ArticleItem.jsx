@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import Chip from "@mui/material/Chip";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Moment from "react-moment";
 import { makeStyles } from "@mui/styles";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import routes from "../utils/routes";
+import StyledDate from "./StyledDate";
 
 const useStyles = makeStyles({
   articleItem: {
@@ -47,12 +47,9 @@ const useStyles = makeStyles({
     textOverflow: 'ellipsis',
     '-webkit-box-orient': 'vertical',
   },
-  sectionLink: {
-    marginLeft: 10,
-  },
 });
 
-export default function ArticleItem({ title, description, image, published_date, section }) {
+export default function ArticleItem({ title, description, byline, image, published_date, section }) {
   const classes = useStyles();
 
   return (
@@ -65,23 +62,13 @@ export default function ArticleItem({ title, description, image, published_date,
           <Typography variant="body2" color="text.secondary" className={classes.description} gutterBottom>
             {description}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <small>
-              <Moment format="MMMM D, Y">
-                {published_date}
-              </Moment>
-            </small>
-            {section && <Chip
-              clickable
-              color="secondary"
-              size="small"
-              variant="outlined"
-              label={section}
-              className={classes.sectionLink}
-              component={Link}
-              to={routes.articles(section.toLowerCase())}
-            />}
-          </Typography>
+          <Stack spacing={0.5} direction="row">
+            <Typography color="textPrimary" component="span" variant="body2">{byline }</Typography>
+            <Typography component="span" variant="body2">in</Typography>
+            <Typography color="textPrimary" component={Link} variant="body2"
+                        to={routes.articles(section)}>{section}</Typography>
+          </Stack>
+          <StyledDate date={published_date} />
         </Grid>
         <Grid item xs={4} md="auto">
           <div className={classes.imageWrap}>

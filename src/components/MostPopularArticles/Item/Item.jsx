@@ -7,7 +7,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import routes from "../../../utils/routes";
 import StyledDate from "../../StyledDate";
-import { Caption, Content, ImageWrapper, StyledLink } from "./styles";
+import { Content, ImageWrapper, StyledLink } from "./styles";
 
 const Item = ({ media, section, title, abstract, byline, url, nytdsection, published_date }) => {
   return (
@@ -31,9 +31,10 @@ const Item = ({ media, section, title, abstract, byline, url, nytdsection, publi
           </Typography>
           <Box mt={2}>
             <Stack spacing={0.5} direction="row">
-              <Caption component="span" variant="body2">{byline}</Caption>
+              <Typography color="textPrimary" component="span" variant="body2">{byline}</Typography>
               <Typography component="span" variant="body2">in</Typography>
-              <Caption component={Link} variant="body2" to={routes.articles(nytdsection)}>{section}</Caption>
+              <Typography color="textPrimary" component={Link} variant="body2"
+                          to={routes.articles(nytdsection)}>{section}</Typography>
             </Stack>
             <StyledDate date={published_date} />
           </Box>

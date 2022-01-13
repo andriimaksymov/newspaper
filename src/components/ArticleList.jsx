@@ -10,6 +10,7 @@ const ArticleList = ({ list, fetching }) => {
       ? list.map((article, key) =>
         <ArticleItem
           key={key}
+          byline={article?.byline}
           title={article.title}
           section={article.section}
           description={article.abstract}

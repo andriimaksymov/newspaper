@@ -5,6 +5,7 @@ import { makeStyles } from "@mui/styles";
 
 import { topStoriesClearAction, topStoriesFetchAction } from "../../store/articles/actions";
 import { getTopStories } from "../../store/articles/articleSlice";
+import ItemSkeleton from "./ItemSkeleton";
 import Title from "../Title";
 import Item from "./Item";
 
@@ -51,11 +52,12 @@ const TopStories = ({ type = 'home', count }) => {
   return (
     <aside className={classes.aside}>
       <div>
-        <Title title="Popular Posts" />
+        <Title title="Top Stories" />
       </div>
       <div className={classes.asideList}>
         {
-          top_stories?.map((story, key) => (
+          !top_stories
+          ? top_stories?.map((story, key) => (
               <Item
                 key={key}
                 url={story.url}
@@ -65,7 +67,7 @@ const TopStories = ({ type = 'home', count }) => {
                 number={`${key < 9 ? '0' : ''}${key + 1}`}
               />
             ),
-          )
+          ) : <ItemSkeleton/>
         }
       </div>
     </aside>

@@ -1,5 +1,4 @@
 import { styled } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 
 export const ImageWrapper = styled('div')({
   display: "flex",
@@ -24,8 +23,3 @@ export const StyledLink = styled('a')(({ theme }) => ({
     color: theme.palette.primary.main,
   },
 }));
-
-export const Caption = styled(Typography)({
-  color: '#000000',
-  textDecoration: 'none',
-});
