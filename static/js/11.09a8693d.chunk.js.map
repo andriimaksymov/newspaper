@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/Error.jsx"],"names":["Error"],"mappings":"yGAAe,SAASA,IACvB,MACC,QAFF","file":"static/js/11.09a8693d.chunk.js","sourcesContent":["export default function Error() {\r\n\treturn (\r\n\t\t\"Error\"\r\n\t)\r\n}"],"sourceRoot":""}
