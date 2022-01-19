@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460">
+    <path style="fill:#ffd170" d="m154.2 447.199 293-293C415.869 64.419 330.464 0 230 0 102.975 0 0 102.974 0 230c0 100.464 64.42 185.869 154.2 217.199z"/>
+    <path style="fill:#ff984c"
+          d="M460 230c0-26.562-4.517-52.064-12.801-75.801L353 60 107 400l47.199 47.199C177.936 455.483 203.439 460 230 460c127.026 0 230-102.975 230-230z"/>
+    <path style="fill:#fff0cf" d="M255 360v30H127v-30l64-10z"/>
+    <path style="fill:#fff" d="m245 340 10 20H127v-30z"/>
+    <path style="fill:#405a0f" d="m137 340-15.333-10L107 340v60h138v-20H137z"/>
+    <path style="fill:#2a3c0a" d="M137 340h-30V60h30l10 140z"/>
+    <path style="fill:#557714" d="M245 340H137V60h108l10 140z"/>
+    <path style="fill:#ffe1a0" d="M353 360v30H245v-30l54-10z"/>
+    <path style="fill:#fff0cf" d="M245 330h108v30H245z"/>
+    <path style="fill:#2a3c0a"
+          d="M245 60h108v280H245zM353 380v20H245v-20h52.667zM27 230l33.334-12.5L70.513 230l-10.179 12.5z"/>
+    <path style="fill:#fff" d="m107 200-46.666 17.5v25L107 260l20.654-30z"/>
+    <path style="fill:#ffd170" d="m371.992 230-150.996 8.571L107 230v-30h246z"/>
+    <path style="fill:#ffc240" d="M353 260H107v-30h264.992z"/>
+    <path style="fill:#ffe1a0" d="M373 200h-20v60h20l10-30z"/>
+    <path style="fill:#aa1106" d="M424.64 230v10c0 11-9 20-20 20H373v-30l25.82-10 25.82 10z"/>
+    <path style="fill:#ff1909" d="M424.64 220v10H373v-30h31.64c11 0 20 9 20 20z"/>
+</svg>

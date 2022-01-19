@@ -1,2 +1,0 @@
-(this.webpackJsonpnewspaper=this.webpackJsonpnewspaper||[]).push([[11],{339:function(n,r,e){"use strict";function t(){return"Error"}e.r(r),e.d(r,"default",(function(){return t}))}}]);
-//# sourceMappingURL=11.09a8693d.chunk.js.map
