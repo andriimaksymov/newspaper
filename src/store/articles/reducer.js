@@ -36,7 +36,7 @@ export default function articlesReducer(state = initialState, { type, data }) {
       return {
         ...state,
         sections: {
-          list: data.results,
+          list: data?.results.filter(i => i.display_name !== 'Admin'),
           count: data.num_results,
           pages: setPagesCount(data.num_results),
         },

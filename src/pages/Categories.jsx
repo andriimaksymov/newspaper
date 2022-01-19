@@ -9,21 +9,25 @@ import Layout from "../components/layout";
 
 const useStyles = makeStyles({
   categoryWrap: {
-    display: 'block',
+    display: 'flex',
+    flexDirection: 'column',
     color: 'inherit',
     textAlign: 'center',
     textDecoration: 'none',
-    padding: 20,
     height: '100%',
-    borderRadius: 30,
-    backgroundColor: '#f3f3f3',
     '&:hover': {
-      color: 'hsl(90, 50%, 53%)',
-      boxShadow: '0 5px 5px rgba(0, 0, 0, .1)',
+      '& $categoryIcon': {
+        color: 'hsl(90, 50%, 53%)',
+        boxShadow: '0 5px 5px rgba(0, 0, 0, .1)',
+      },
     },
   },
   categoryIcon: {
+    flexGrow: 1,
     marginBottom: 20,
+    padding: 20,
+    borderRadius: 30,
+    backgroundColor: '#f3f3f3',
   },
 });
 

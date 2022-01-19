@@ -56,18 +56,21 @@ const TopStories = ({ type = 'home', count }) => {
       </div>
       <div className={classes.asideList}>
         {
-          !top_stories
-          ? top_stories?.map((story, key) => (
-              <Item
-                key={key}
-                url={story.url}
-                title={story.title}
-                byline={story.byline}
-                date={story.published_date}
-                number={`${key < 9 ? '0' : ''}${key + 1}`}
-              />
-            ),
-          ) : <ItemSkeleton/>
+          top_stories
+            ? top_stories?.map((story, key) => (
+                <Item
+                  key={key}
+                  url={story.url}
+                  title={story.title}
+                  byline={story.byline}
+                  date={story.published_date}
+                  number={`${key < 9 ? '0' : ''}${key + 1}`}
+                />
+              ),
+            ) : <>
+              <ItemSkeleton />
+              <ItemSkeleton />
+            </>
         }
       </div>
     </aside>

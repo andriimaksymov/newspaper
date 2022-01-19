@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import { Skeleton } from "@mui/lab";
 import Stack from "@mui/material/Stack";
+import Skeleton from "@mui/material/Skeleton";
 
 const ItemSkeleton = () => {
   return (
