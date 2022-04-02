@@ -14,23 +14,26 @@ const Categories = lazy(() => import("./pages/Categories"));
 const Error = lazy(() => import("./pages/Error"));
 
 export default function App() {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(articlesSectionsFetchAction());
-    }, [dispatch]);
-    return (
-        <ErrorBoundary>
-            <Router>
-                <Suspense fallback={<Default />}>
-                    <Switch>
-                        <Route exact path={routes.home} component={Home} />
-                        <Route exact path={routes.search} component={Search} />
-                        <Route exact path={routes.categories} component={Categories} />
-                        <Route exact path={routes.articles(":slug_name")} component={Articles} />
-                        <Route path="*" component={Error} />
-                    </Switch>
-                </Suspense>
-            </Router>
-        </ErrorBoundary>
-    );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(articlesSectionsFetchAction());
+
+    // eslint-disable-next-line
+  }, []);
+
+  return (
+    <ErrorBoundary>
+      <Router>
+        <Suspense fallback={<Default />}>
+          <Switch>
+            <Route exact path={routes.home} component={Home} />
+            <Route exact path={routes.search} component={Search} />
+            <Route exact path={routes.categories} component={Categories} />
+            <Route exact path={routes.articles(":slug_name")} component={Articles} />
+            <Route path="*" component={Error} />
+          </Switch>
+        </Suspense>
+      </Router>
+    </ErrorBoundary>
+  );
 }

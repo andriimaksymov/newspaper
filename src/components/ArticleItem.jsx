@@ -63,10 +63,10 @@ export default function ArticleItem({ title, description, byline, image, publish
             {description}
           </Typography>
           <Stack spacing={0.5} direction="row">
-            <Typography color="textPrimary" component="span" variant="body2">{byline }</Typography>
+            <Typography color="textPrimary" component="span" variant="body2">{byline}</Typography>
             <Typography component="span" variant="body2">in</Typography>
             <Typography color="textPrimary" component={Link} variant="body2"
-                        to={routes.articles(section)}>{section}</Typography>
+                        to={routes.articles(section.toLowerCase())}>{section}</Typography>
           </Stack>
           <StyledDate date={published_date} />
         </Grid>

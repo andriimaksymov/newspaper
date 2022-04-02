@@ -1,4 +1,4 @@
-const section = 'articles/'
+const section = 'articles/';
 
 export const ARTICLES_SECTIONS_FETCH = section + 'ARTICLES_SECTIONS_FETCH';
 export const ARTICLES_SECTIONS_RECEIVED = section + 'ARTICLES_SECTIONS_RECEIVED';

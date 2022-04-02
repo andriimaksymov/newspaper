@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import ArticleItem from "./ArticleItem";
 import ArticleItemSkeleton from "./ArticleItemSkeleton";
+import { isEqualPropsMemo } from "../utils/common";
 
 const ArticleList = ({ list, fetching }) => {
   return (
@@ -27,4 +28,4 @@ ArticleList.propTypes = {
   list: PropTypes.array,
 };
 
-export default memo(ArticleList);
+export default memo(ArticleList, isEqualPropsMemo);

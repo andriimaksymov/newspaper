@@ -44,9 +44,9 @@ const Search = () => {
     };
 
     // eslint-disable-next-line
-  }, [dispatch, location]);
+  }, [location]);
 
-  const handleChangeDate = (date ,name) => {
+  const handleChangeDate = (date, name) => {
     query.set(name, date);
     history.push({ pathname: location.pathname, search: query.toString() });
   };

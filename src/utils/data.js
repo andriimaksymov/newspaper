@@ -9,11 +9,13 @@ import { ReactComponent as Health } from '../assets/icons/health.svg';
 import { ReactComponent as Sports } from '../assets/icons/sports.svg';
 import { ReactComponent as Travel } from '../assets/icons/travel.svg';
 import { ReactComponent as Climate } from '../assets/icons/climat.svg';
+import { ReactComponent as Fashion } from '../assets/icons/fashion.svg';
 import { ReactComponent as Network } from '../assets/icons/network.svg';
 import { ReactComponent as Magazine } from '../assets/icons/magazine.svg';
 import { ReactComponent as Business } from '../assets/icons/business.svg';
 import { ReactComponent as Briefing } from '../assets/icons/briefing.svg';
 import { ReactComponent as Education } from '../assets/icons/education.svg';
+import { ReactComponent as YourMoney } from '../assets/icons/your-money.svg';
 import { ReactComponent as Multimedia } from '../assets/icons/multimedia.svg';
 import { ReactComponent as Automobiles } from '../assets/icons/automobiles.svg';
 
@@ -28,7 +30,7 @@ export const categoriesData = {
   "Crosswords & Games": { icon: <Games /> },
   "Education": { icon: <Education /> },
   "En Español": {},
-  "Fashion": {},
+  "Fashion": { icon: <Fashion /> },
   "Food": { icon: <Food /> },
   "Guides": {},
   "Health": { icon: <Health /> },
@@ -65,5 +67,5 @@ export const categoriesData = {
   "Video": {},
   "Well": {},
   "World": {},
-  "Your Money": {},
+  "Your Money": { icon: <YourMoney /> },
 };

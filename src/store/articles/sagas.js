@@ -3,7 +3,8 @@ import { all, call, takeEvery, put, takeLatest } from "redux-saga/effects";
 import {
   requestArticles,
   requestArticlesSections,
-  requestMostPopular, requestMoviesReview,
+  requestMostPopular,
+  requestMoviesReview,
   requestSearch,
   requestTopStories,
 } from "../../services/api";
@@ -11,7 +12,9 @@ import { fetchingFinished, fetchingStart } from "../common/actions";
 import {
   articlesReceivedAction,
   articlesSectionsReceivedAction,
-  mostPopularReceivedAction, movieReviewsReceivedAction, searchReceivedAction,
+  mostPopularReceivedAction,
+  movieReviewsReceivedAction,
+  searchReceivedAction,
   topStoriesReceivedAction,
 } from "./actions";
 import * as TYPE from "./actionTypes";
