@@ -1,15 +1,15 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Layout from "../components/layout";
-import { useQuery } from "../utils/hooks";
-import { searchClearAction, searchFetchAction } from "../store/articles/actions";
-import Title from "../components/Title";
-import ArticleItem from "../components/ArticleItem";
-import Pagination from "../components/Pagination";
-import SortedSelect from "../components/SortedSelect";
-import { useHistory, useLocation } from "react-router-dom";
-import { styled } from "@mui/material/styles";
-import DatePicker from "../components/DatePicker";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Layout from '../components/layout';
+import { useQuery } from '../hooks';
+import { searchClearAction, searchFetchAction } from '../store/articles/actions';
+import Title from '../components/Title';
+import ArticleItem from '../components/ArticleItem';
+import Pagination from '../components/Pagination';
+import SortedSelect from '../components/SortedSelect';
+import { useHistory, useLocation } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import DatePicker from '../components/DatePicker';
 
 const sortedList = [
   { value: 'best', label: 'Order by relevance' },

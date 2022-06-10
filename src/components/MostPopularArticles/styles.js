@@ -1,6 +1,6 @@
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 import { Swiper } from 'swiper/react';
-import IconButton from "@mui/material/IconButton";
+import IconButton from '@mui/material/IconButton';
 
 export const Wrapper = styled('div')({
   position: 'relative',

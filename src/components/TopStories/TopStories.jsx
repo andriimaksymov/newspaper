@@ -1,13 +1,12 @@
-import { useEffect } from "react";
-import PropTypes from "prop-types";
-import { useDispatch, useSelector } from "react-redux";
-import { makeStyles } from "@mui/styles";
-
-import { topStoriesClearAction, topStoriesFetchAction } from "../../store/articles/actions";
-import { getTopStories } from "../../store/articles/articleSlice";
-import ItemSkeleton from "./ItemSkeleton";
-import Title from "../Title";
-import Item from "./Item";
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { makeStyles } from '@mui/styles';
+import { topStoriesClearAction, topStoriesFetchAction } from '../../store/articles/actions';
+import { getTopStories } from '../../store/articles/articleSlice';
+import ItemSkeleton from './ItemSkeleton';
+import Title from '../Title';
+import Item from './Item';
 
 const useStyles = makeStyles({
   aside: {

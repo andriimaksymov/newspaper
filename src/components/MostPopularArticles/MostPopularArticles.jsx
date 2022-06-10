@@ -1,18 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
-import { useDispatch, useSelector } from "react-redux";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Skeleton from "@mui/material/Skeleton";
+import { useDispatch, useSelector } from 'react-redux';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Skeleton from '@mui/material/Skeleton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import 'swiper/swiper-bundle.css';
-
-import { mostPopularClearAction, mostPopularFetchAction, movieReviewsFetchAction } from "../../store/articles/actions";
-import { getMostPopularWithMedia } from "../../store/articles/articleSlice";
+import { mostPopularClearAction, mostPopularFetchAction, movieReviewsFetchAction } from '../../store/articles/actions';
+import { getMostPopularWithMedia } from '../../store/articles/articleSlice';
 import { ButtonsWrap, PrevButton, NextButton, StyledSwiper, Wrapper } from './styles';
-import Item from "./Item";
+import Item from './Item';
 
 SwiperCore.use([Navigation, Pagination]);
 

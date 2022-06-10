@@ -1,9 +1,10 @@
-import { memo } from "react";
-import PropTypes from "prop-types";
-import StyledDate from "../../StyledDate";
-import { Description, ImageWrap, ItemLink, Title } from "./styles";
+import { memo } from 'react';
+import PropTypes from 'prop-types';
+import StyledDate from '../../StyledDate';
+import { isEqualPropsMemo } from '../../../utils/common';
+import { Description, ImageWrap, ItemLink, Title } from './styles';
 
-const Item = ({ url, size, image, title, description, date, author, section }) => {
+const Item = ({ url, size, image, title, description, date }) => {
   return (
     <ItemLink size={size} href={url} target="_blank" rel="norefferer">
       <ImageWrap size={size}>
@@ -26,9 +27,7 @@ Item.propTypes = {
   size: PropTypes.string,
   image: PropTypes.string,
   title: PropTypes.string,
-  author: PropTypes.string,
-  section: PropTypes.string,
   description: PropTypes.string,
 };
 
-export default memo(Item);
+export default memo(Item, isEqualPropsMemo);

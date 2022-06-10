@@ -1,5 +1,6 @@
-import PropTypes from "prop-types";
-import { StyledTitle } from "./styles";
+import { memo } from 'react';
+import PropTypes from 'prop-types';
+import { StyledTitle } from './styles';
 
 const Title = ({ title, ...rest }) => {
   return (
@@ -11,4 +12,4 @@ Title.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default Title;
+export default memo(Title);

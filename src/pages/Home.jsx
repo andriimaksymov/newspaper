@@ -1,10 +1,9 @@
-import Grid from "@mui/material/Grid";
-
-import Layout from "../components/layout";
-import MostPopularArticles from "../components/MostPopularArticles";
-import ArticlesSection from "../components/ArticlesSection";
-import HomeMovieReviews from "../components/HomeMovieReviews";
-import TopStories from "../components/TopStories/TopStories";
+import Grid from '@mui/material/Grid';
+import Layout from '../components/layout';
+import MostPopularArticles from '../components/MostPopularArticles';
+import ArticlesSection from '../components/ArticlesSection';
+import HomeMovieReviews from '../components/HomeMovieReviews';
+import TopStories from '../components/TopStories/TopStories';
 
 export default function Home() {
   return (

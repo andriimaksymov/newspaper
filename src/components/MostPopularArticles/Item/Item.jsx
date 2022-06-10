@@ -1,13 +1,14 @@
-import { memo } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import routes from "../../../utils/routes";
-import StyledDate from "../../StyledDate";
-import { Content, ImageWrapper, StyledLink } from "./styles";
+import { memo } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { isEqualPropsMemo } from '../../../utils/common';
+import routes from '../../../utils/routes';
+import StyledDate from '../../StyledDate';
+import { Content, ImageWrapper, StyledLink } from './styles';
 
 const Item = ({ media, section, title, abstract, byline, url, nytdsection, published_date }) => {
   return (
@@ -15,8 +16,8 @@ const Item = ({ media, section, title, abstract, byline, url, nytdsection, publi
       <Grid item xs={6}>
         <ImageWrapper>
           <img
-            src={media["media-metadata"]?.[2]?.url} height={media["media-metadata"]?.[2]?.height}
-            width={media["media-metadata"]?.[2]?.width} alt={media["caption"]} />
+            src={media['media-metadata']?.[2]?.url} height={media['media-metadata']?.[2]?.height}
+            width={media['media-metadata']?.[2]?.width} alt={media['caption']} />
         </ImageWrapper>
       </Grid>
       <Grid item xs={6}>
@@ -55,4 +56,4 @@ Item.propTypes = {
   published_date: PropTypes.string,
 };
 
-export default memo(Item);
+export default memo(Item, isEqualPropsMemo);

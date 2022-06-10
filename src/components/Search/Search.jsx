@@ -1,10 +1,10 @@
-import { useFormik } from "formik";
-import { TextField, IconButton } from "@mui/material";
+import { useFormik } from 'formik';
+import { TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
-import routes from "../utils/routes";
-import { useQuery } from "../utils/hooks";
+import routes from '../../utils/routes';
+import { useQuery } from '../../hooks';
 
 const SearchField = styled(TextField)({
   '& .MuiInput-root': {

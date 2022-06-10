@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import PropTypes from 'prop-types';
-import Typography from "@mui/material/Typography";
+import Typography from '@mui/material/Typography';
 
-import StyledDate from "../../StyledDate";
-import { ItemWrapper, Number } from "./styles";
+import StyledDate from '../../StyledDate';
+import { ItemWrapper, Number } from './styles';
 
 const Item = ({ url, number, title, byline, date, ...rest }) => {
   return (

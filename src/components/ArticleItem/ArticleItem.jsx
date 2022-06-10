@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
-import { makeStyles } from "@mui/styles";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
+import { memo } from 'react';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@mui/styles';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
-import routes from "../utils/routes";
-import StyledDate from "./StyledDate";
+import { isEqualPropsMemo } from '../../utils/common';
+import routes from '../../utils/routes';
+import StyledDate from '../StyledDate';
 
 const useStyles = makeStyles({
   articleItem: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles({
     '& .MuiSvgIcon-root': {
       width: 100,
       height: 100,
-      color: "#808080",
+      color: '#808080',
     },
   },
   title: {
@@ -49,7 +51,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ArticleItem({ title, description, byline, image, published_date, section }) {
+const ArticleItem = ({ title, description, byline, image, published_date, section }) => {
   const classes = useStyles();
 
   return (
@@ -82,4 +84,6 @@ export default function ArticleItem({ title, description, byline, image, publish
       </Grid>
     </div>
   );
-}
+};
+
+export default memo(ArticleItem, isEqualPropsMemo);

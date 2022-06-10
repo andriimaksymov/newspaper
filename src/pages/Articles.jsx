@@ -1,8 +1,7 @@
 import Grid from '@mui/material/Grid';
-
-import Layout from "../components/layout";
-import TopStories from "../components/TopStories/TopStories";
-import ArticlesSection from "../components/ArticlesSection";
+import Layout from '../components/layout';
+import TopStories from '../components/TopStories/TopStories';
+import ArticlesSection from '../components/ArticlesSection';
 
 export default function Articles({ match }) {
   const type = match.params.slug_name;

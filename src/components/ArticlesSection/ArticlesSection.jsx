@@ -1,13 +1,12 @@
-import { useEffect, memo } from "react";
+import { useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from "react-redux";
-import { makeStyles } from "@mui/styles";
-
-import { articlesClearAction, articlesFetchAction } from "../store/articles/actions";
-import { useDeepEqualMemo, useQuery } from "../utils/hooks";
-import ArticleList from "./ArticleList";
-import Pagination from "./Pagination";
-import Title from "./Title";
+import { useDispatch, useSelector } from 'react-redux';
+import { makeStyles } from '@mui/styles';
+import { articlesClearAction, articlesFetchAction } from '../../store/articles/actions';
+import { useDeepEqualMemo, useQuery } from '../../hooks';
+import ArticleList from '../ArticleList';
+import Pagination from '../Pagination';
+import Title from '../Title';
 
 const useStyles = makeStyles({
   wrap: {
@@ -19,7 +18,7 @@ const ArticlesSection = ({ type, pagination = true }) => {
   const query = useQuery();
   const classes = useStyles();
   const dispatch = useDispatch();
-  const params = useDeepEqualMemo({ offset: query.get("page"), limit: pagination ? 20 : 5 });
+  const params = useDeepEqualMemo({ offset: query.get('page'), limit: pagination ? 20 : 5 });
 
   const { articles, fetching } = useSelector(({ articles, common }) => ({
     fetching: common.fetching,

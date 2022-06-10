@@ -1,7 +1,7 @@
-import { memo } from "react";
-import PropTypes from "prop-types";
-import Moment from "react-moment";
-import { Date } from "./styles";
+import { memo } from 'react';
+import PropTypes from 'prop-types';
+import Moment from 'react-moment';
+import { Date } from './styles';
 
 const StyledDate = ({ date, ...rest }) => {
   return (

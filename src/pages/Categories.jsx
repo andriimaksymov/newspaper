@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { makeStyles } from "@mui/styles";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import { categoriesData } from "../utils/data";
-import routes from "../utils/routes";
-import Layout from "../components/layout";
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { makeStyles } from '@mui/styles';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import { categoriesData } from '../utils/data';
+import routes from '../utils/routes';
+import Layout from '../components/layout';
 
 const useStyles = makeStyles({
   categoryWrap: {
@@ -40,14 +40,14 @@ export default function Categories() {
       <Grid container spacing={4}>
         {
           section.list && section.list.map(item =>
-            categoriesData[item.display_name]?.icon && <Grid key={item.section} item xs={6} sm={4} md={3}>
-              <Link className={classes.categoryWrap} to={routes.articles(item.section)}>
-                <div className={classes.categoryIcon}>
-                  {categoriesData[item.display_name].icon}
-                </div>
-                <Typography variant="h5">{item.display_name}</Typography>
-              </Link>
-            </Grid>,
+              categoriesData[item.display_name]?.icon && <Grid key={item.section} item xs={6} sm={4} md={3}>
+                <Link className={classes.categoryWrap} to={routes.articles(item.section)}>
+                  <div className={classes.categoryIcon}>
+                    {categoriesData[item.display_name].icon}
+                  </div>
+                  <Typography variant="h5">{item.display_name}</Typography>
+                </Link>
+              </Grid>,
           )
         }
       </Grid>

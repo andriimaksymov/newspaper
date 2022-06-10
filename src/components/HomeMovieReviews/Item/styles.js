@@ -1,5 +1,5 @@
-import { styled } from "@mui/styles";
-import { Typography } from "@mui/material";
+import { styled } from '@mui/styles';
+import { Typography } from '@mui/material';
 
 export const ItemLink = styled('a')(({ size }) => ({
   color: 'inherit',
@@ -29,7 +29,7 @@ export const Title = styled(Typography)({
   lineHeight: '1.5rem',
   maxHeight: '1.5rem',
   overflow: 'hidden',
-  "-webkit-line-clamp": 1,
+  '-webkit-line-clamp': 1,
   display: 'box',
   '-webkit-box-orient': 'vertical',
   textOverflow: 'ellipsis',
@@ -41,7 +41,7 @@ export const Description = styled(Typography)({
   lineHeight: '2rem',
   maxHeight: '2.4rem',
   overflow: 'hidden',
-  "-webkit-line-clamp": 2,
+  '-webkit-line-clamp': 2,
   display: 'box',
   '-webkit-box-orient': 'vertical',
   textOverflow: 'ellipsis',

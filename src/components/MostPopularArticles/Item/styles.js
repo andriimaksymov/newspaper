@@ -1,7 +1,7 @@
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
 export const ImageWrapper = styled('div')({
-  display: "flex",
+  display: 'flex',
   'img': {
     width: '100%',
     height: 'auto',

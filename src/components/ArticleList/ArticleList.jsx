@@ -1,9 +1,8 @@
-import { memo } from "react";
-import PropTypes from "prop-types";
-
-import ArticleItem from "./ArticleItem";
-import ArticleItemSkeleton from "./ArticleItemSkeleton";
-import { isEqualPropsMemo } from "../utils/common";
+import { memo } from 'react';
+import PropTypes from 'prop-types';
+import ArticleItem from '../ArticleItem';
+import ArticleItemSkeleton from '../ArticleItemSkeleton';
+import { isEqualPropsMemo } from '../../utils/common';
 
 const ArticleList = ({ list, fetching }) => {
   return (

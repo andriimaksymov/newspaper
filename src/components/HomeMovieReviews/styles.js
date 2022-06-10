@@ -1,4 +1,4 @@
-import { styled } from "@mui/styles";
+import { styled } from '@mui/styles';
 
 export const ReviewsWrapper = styled('div')({
   padding: '40px 0',

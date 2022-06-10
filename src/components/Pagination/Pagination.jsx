@@ -1,10 +1,9 @@
-import { memo, useEffect, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
-import { makeStyles } from "@mui/styles";
+import { memo, useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@mui/styles';
 import Pagination from '@mui/material/Pagination';
-
-import { useQuery } from "../utils/hooks";
+import { useQuery } from '../../hooks';
 
 const useStyles = makeStyles({
   paginationWrap: {

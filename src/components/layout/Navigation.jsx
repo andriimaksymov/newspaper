@@ -1,13 +1,13 @@
-import { NavLink, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { styled } from "@mui/material/styles";
-import Stack from "@mui/material/Stack";
-import Skeleton from "@mui/material/Skeleton";
-import IconButton from "@mui/material/IconButton";
+import { NavLink, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { styled } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import Skeleton from '@mui/material/Skeleton';
+import IconButton from '@mui/material/IconButton';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import Container from "@mui/material/Container";
-import { navigationSectionsList } from "../../store/articles/articleSlice";
-import routes from "../../utils/routes";
+import Container from '@mui/material/Container';
+import { navigationSectionsList } from '../../store/articles/articleSlice';
+import routes from '../../utils/routes';
 
 const NavigationWrapper = styled('div')({
   position: 'sticky',
@@ -46,7 +46,7 @@ export default function Navigation() {
         {
           section_list
             ? <NavigationNav>
-              <NavigationNavItem to={routes.articles("all")}>All</NavigationNavItem>
+              <NavigationNavItem to={routes.articles('all')}>All</NavigationNavItem>
               {section_list.map(item =>
                 <NavigationNavItem key={item.section} to={routes.articles(item.section)}>
                   {item.display_name}

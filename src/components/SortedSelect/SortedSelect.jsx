@@ -1,7 +1,7 @@
-import { memo, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import { FormControl, MenuItem, Select } from "@mui/material";
-import { useQuery } from "../utils/hooks";
+import { memo, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import { FormControl, MenuItem, Select } from '@mui/material';
+import { useQuery } from '../../hooks';
 
 const SortedSelect = ({ value, sortedList }) => {
   const history = useHistory();

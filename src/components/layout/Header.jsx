@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import { makeStyles } from "@mui/styles";
-
-import routes from "../../utils/routes";
-import Search from "../Search";
+import { Link } from 'react-router-dom';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import { makeStyles } from '@mui/styles';
+import routes from '../../utils/routes';
+import Search from '../Search';
 
 const useStyles = makeStyles({
   root: {
-    padding: "30px 0",
+    padding: '30px 0',
   },
   logo: {
     fontSize: '2rem',
