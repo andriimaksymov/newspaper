@@ -1,8 +1,9 @@
 import { styled } from '@mui/styles';
 import { Typography } from '@mui/material';
 
-export const ItemLink = styled('a')(({ size }) => ({
+export const ItemLink = styled('span')(({ size }) => ({
   color: 'inherit',
+  cursor: 'pointer',
   ...(size === 'large' ? {
     display: 'block',
   } : {

@@ -4,10 +4,19 @@ import Typography from '@mui/material/Typography';
 
 import StyledDate from '../../StyledDate';
 import { ItemWrapper, Number } from './styles';
+import { useHistory } from 'react-router-dom';
+import routes from '../../../utils/routes';
 
-const Item = ({ url, number, title, byline, date, ...rest }) => {
+const Item = ({ id, url, number, title, byline, date, ...rest }) => {
+  const history = useHistory();
+
+  const handleOpenArticle = () => {
+    localStorage.setItem('article', url);
+    history.push({ pathname: routes.articleView(Math.random() * 10) });
+  };
+
   return (
-    <ItemWrapper {...rest} href={url} target="_blank" rel="noreferrer">
+    <ItemWrapper {...rest} onClick={handleOpenArticle}>
       <Number>
         {number}
       </Number>

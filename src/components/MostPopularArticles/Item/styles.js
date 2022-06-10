@@ -14,7 +14,7 @@ export const Content = styled('div')({
   backgroundColor: '#f8f9fa',
 });
 
-export const StyledLink = styled('a')(({ theme }) => ({
+export const StyledLink = styled('span')(({ theme }) => ({
   color: 'inherit',
   cursor: 'pointer',
   textDecoration: 'none',

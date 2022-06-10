@@ -2,6 +2,7 @@ import { styled } from '@mui/material/styles';
 
 export const ItemWrapper = styled('a')({
   display: 'grid',
+  cursor: 'pointer',
   gridRowGap: 5,
   gridTemplateColumns: '50px 1fr',
 });

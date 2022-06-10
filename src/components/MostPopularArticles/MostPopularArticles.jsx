@@ -49,10 +49,11 @@ export default function MostPopularArticles() {
             pagination={{ clickable: true }}
           >
             {
-              most_popular.map((story) =>
+              most_popular.map(story =>
                 <SwiperSlide key={story.id}>
                   <Item
                     key={story.id}
+                    id={story.id}
                     media={story.media[0]}
                     section={story.section}
                     title={story.title}

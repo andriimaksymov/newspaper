@@ -1,12 +1,21 @@
 import { memo } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import StyledDate from '../../StyledDate';
 import { isEqualPropsMemo } from '../../../utils/common';
+import routes from '../../../utils/routes';
 import { Description, ImageWrap, ItemLink, Title } from './styles';
 
 const Item = ({ url, size, image, title, description, date }) => {
+  const history = useHistory();
+
+  const handleOpenArticle = () => {
+    localStorage.setItem('article', url);
+    history.push({ pathname: routes.articleView(Math.random() * 10) });
+  };
+
   return (
-    <ItemLink size={size} href={url} target="_blank" rel="norefferer">
+    <ItemLink onClick={handleOpenArticle} size={size}>
       <ImageWrap size={size}>
         <img src={image} alt={title} />
       </ImageWrap>

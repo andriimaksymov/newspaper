@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -10,7 +10,14 @@ import routes from '../../../utils/routes';
 import StyledDate from '../../StyledDate';
 import { Content, ImageWrapper, StyledLink } from './styles';
 
-const Item = ({ media, section, title, abstract, byline, url, nytdsection, published_date }) => {
+const Item = ({ id, media, section, title, abstract, byline, url, nytdsection, published_date }) => {
+  const history = useHistory();
+
+  const handleOpenArticle = () => {
+    localStorage.setItem('article', url);
+    history.push({ pathname: routes.articleView(id) });
+  };
+
   return (
     <Grid container>
       <Grid item xs={6}>
@@ -23,7 +30,7 @@ const Item = ({ media, section, title, abstract, byline, url, nytdsection, publi
       <Grid item xs={6}>
         <Content>
           <Typography gutterBottom variant="h3" component="h2">
-            <StyledLink href={url} target="_blank" rel="noreferrer">
+            <StyledLink onClick={handleOpenArticle}>
               {title}
             </StyledLink>
           </Typography>
@@ -46,14 +53,15 @@ const Item = ({ media, section, title, abstract, byline, url, nytdsection, publi
 };
 
 Item.propTypes = {
+  id: PropTypes.number,
   url: PropTypes.string,
-  media: PropTypes.object,
   title: PropTypes.string,
   byline: PropTypes.string,
   section: PropTypes.string,
   abstract: PropTypes.string,
   nytdsection: PropTypes.string,
   published_date: PropTypes.string,
+  media: PropTypes.object,
 };
 
 export default memo(Item, isEqualPropsMemo);

@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@mui/styles';
+import PropTypes from 'prop-types';
+import { Link, useHistory } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -8,54 +8,19 @@ import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import { isEqualPropsMemo } from '../../utils/common';
 import routes from '../../utils/routes';
 import StyledDate from '../StyledDate';
+import useStyles from './styles';
 
-const useStyles = makeStyles({
-  articleItem: {
-    '& + $articleItem': {
-      marginTop: 30,
-    },
-    '& $sectionLink': {
-      marginLeft: 10,
-    },
-  },
-  imageWrap: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 210,
-    minHeight: 140,
-    backgroundColor: '#f3f2f2',
-    '& .MuiSvgIcon-root': {
-      width: 100,
-      height: 100,
-      color: '#808080',
-    },
-  },
-  title: {
-    display: 'box',
-    overflow: 'hidden',
-    maxHeight: '3.25em',
-    lineClamp: 2,
-    whiteSpace: 'normal',
-    textOverflow: 'ellipsis',
-    '-webkit-box-orient': 'vertical',
-  },
-  description: {
-    display: 'box',
-    overflow: 'hidden',
-    maxHeight: '4.5em',
-    lineClamp: 3,
-    whiteSpace: 'normal',
-    textOverflow: 'ellipsis',
-    '-webkit-box-orient': 'vertical',
-  },
-});
-
-const ArticleItem = ({ title, description, byline, image, published_date, section }) => {
+const ArticleItem = ({ url, title, description, byline, image, published_date, section }) => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const handleOpenArticle = () => {
+    localStorage.setItem('article', url);
+    history.push({ pathname: routes.articleView(Math.random() * 10) });
+  };
 
   return (
-    <div className={classes.articleItem}>
+    <div className={classes.articleItem} onClick={handleOpenArticle}>
       <Grid container spacing={2}>
         <Grid item xs={8} md>
           <Typography className={classes.title} variant="h6" gutterBottom>
@@ -84,6 +49,16 @@ const ArticleItem = ({ title, description, byline, image, published_date, sectio
       </Grid>
     </div>
   );
+};
+
+ArticleItem.propTypes = {
+  url: PropTypes.string,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  byline: PropTypes.string,
+  section: PropTypes.string,
+  description: PropTypes.string,
+  published_date: PropTypes.string,
 };
 
 export default memo(ArticleItem, isEqualPropsMemo);

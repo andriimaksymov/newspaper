@@ -10,7 +10,7 @@ export const ReviewsList = styled('div')({
   gridTemplateColumns: '40% 1fr',
   gridGap: 30,
 
-  '& > a:first-child': {
+  '& > *:first-child': {
     gridRow: 'span 3',
   },
 });

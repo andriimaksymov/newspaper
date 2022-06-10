@@ -3,22 +3,22 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      light: "hsl(90, 50%, 65%)",
-      main: "hsl(90, 50%, 53%)",
-      dark: "hsl(90, 50%, 35%)",
+      light: 'hsl(90, 50%, 65%)',
+      main: 'hsl(90, 50%, 53%)',
+      dark: 'hsl(90, 50%, 35%)',
     },
     background: {
-      light: "#f8f9fa",
+      light: '#f8f9fa',
     },
   },
   typography: {
     fontFamily: 'Cabin, sans-serif',
     body1: {
-      color: "#808080",
+      color: '#808080',
       fontSize: '.9rem',
     },
     body2: {
-      color: "#808080",
+      color: '#808080',
       fontSize: '.8rem',
     },
     h1: {
@@ -55,19 +55,22 @@ const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        "#root": {
+        '#root': {
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
         },
-        "::-webkit-scrollbar": {
+        ':root': {
+          '--color-primary': 'hsl(90, 50%, 53%)',
+        },
+        '::-webkit-scrollbar': {
           width: 10,
         },
-        "::-webkit-scrollbar-track": {
+        '::-webkit-scrollbar-track': {
           background: '#f1f1f1',
         },
-        "::-webkit-scrollbar-thumb": {
-          background: "#888",
+        '::-webkit-scrollbar-thumb': {
+          background: '#888',
         },
         body: {
           color: '#000000',

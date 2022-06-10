@@ -36,7 +36,7 @@ const useStyles = makeStyles({
 const TopStories = ({ type = 'home', count }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const top_stories = useSelector(getTopStories(count));
+  const topStories = useSelector(getTopStories(count));
 
   useEffect(() => {
     dispatch(topStoriesFetchAction({ type }));
@@ -55,8 +55,8 @@ const TopStories = ({ type = 'home', count }) => {
       </div>
       <div className={classes.asideList}>
         {
-          top_stories
-            ? top_stories?.map((story, key) => (
+          topStories
+            ? topStories?.map((story, key) => (
                 <Item
                   key={key}
                   url={story.url}
