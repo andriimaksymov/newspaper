@@ -2,7 +2,7 @@
   "name": "newspaper",
   "version": "0.0.6",
   "private": true,
-  "homepage": "https://andriipanekalo.github.io/newspaper",
+  "homepage": "https://andriipanekalo.github.io/",
   "author": "andrii-panekalo",
   "dependencies": {
     "@date-io/date-fns": "^2.11.0",
