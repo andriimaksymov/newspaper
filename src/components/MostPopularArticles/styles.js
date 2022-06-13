@@ -4,6 +4,10 @@ import IconButton from '@mui/material/IconButton';
 
 export const Wrapper = styled('div')({
   position: 'relative',
+  '@media (min-width: 992px)': {
+    maxWidth: 1000,
+    margin: 'auto',
+  },
 });
 
 export const StyledSwiper = styled(Swiper)(({ theme }) => ({

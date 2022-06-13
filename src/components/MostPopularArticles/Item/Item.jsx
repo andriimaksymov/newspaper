@@ -18,16 +18,16 @@ const Item = ({ id, media, section, title, abstract, byline, url, nytdsection, p
     history.push({ pathname: routes.articleView(id) });
   };
 
+  const image = media['media-metadata']?.[2] || {};
+
   return (
     <Grid container>
-      <Grid item xs={6}>
+      <Grid item xs="auto">
         <ImageWrapper>
-          <img
-            src={media['media-metadata']?.[2]?.url} height={media['media-metadata']?.[2]?.height}
-            width={media['media-metadata']?.[2]?.width} alt={media['caption']} />
+          <img src={image.url} height={image.height} width={image.width} alt={media['caption']} />
         </ImageWrapper>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs>
         <Content>
           <Typography gutterBottom variant="h3" component="h2">
             <StyledLink onClick={handleOpenArticle}>
