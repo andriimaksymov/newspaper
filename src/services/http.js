@@ -42,10 +42,10 @@ axios
   .interceptors
   .request
   .use(config => {
-    config.baseURL = 'https://api.nytimes.com/svc';
+    config.baseURL = process.env.REACT_APP_API_URL;
     config.params = {
       ...config.params,
-      'api-key': '6j3kXWFWmpK8ycpgFoL9IFMhUnfgOQOF',
+      'api-key': process.env.REACT_APP_API_KEY,
     };
     return config;
   });
