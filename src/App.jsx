@@ -11,6 +11,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Search = lazy(() => import('./pages/Search'));
 const Articles = lazy(() => import('./pages/Articles'));
 const ArticleView = lazy(() => import('./pages/ArticleView'));
+const Books = lazy(() => import('./pages/Books'));
 const Categories = lazy(() => import('./pages/Categories'));
 const Error = lazy(() => import('./pages/Error'));
 
@@ -29,6 +30,7 @@ export default function App() {
           <Switch>
             <Route exact path={routes.home} component={Home} />
             <Route exact path={routes.search} component={Search} />
+            <Route exact path={routes.books} component={Books} />
             <Route exact path={routes.categories} component={Categories} />
             <Route exact path={routes.articleView(':id')} component={ArticleView} />
             <Route exact path={routes.articles(':slug_name')} component={Articles} />
