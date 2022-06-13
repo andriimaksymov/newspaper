@@ -92,6 +92,9 @@ const theme = createTheme({
             textDecoration: 'none',
             color: 'hsl(90, 50%, 53%)',
           },
+          '&.active': {
+            color: 'hsl(90, 50%, 53%)',
+          },
         },
       },
     },
