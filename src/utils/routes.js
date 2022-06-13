@@ -1,9 +1,9 @@
 const routes = {
-  home: '/newspaper',
-  search: '/newspaper/search',
-  articles: slug_name => `/newspaper/articles/${slug_name}`,
-  articleView: id => '/newspaper/article/' + id,
-  categories: '/newspaper/categories',
+  home: '/',
+  search: '/search',
+  articles: slug_name => `/articles/${slug_name}`,
+  articleView: id => '/article/' + id,
+  categories: '/categories',
 };
 
 export default routes;

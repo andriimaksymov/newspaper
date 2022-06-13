@@ -2,7 +2,7 @@
   "name": "newspaper",
   "version": "0.0.6",
   "private": true,
-  "homepage": "https://andriipanekalo.github.io/newspaper",
+  "homepage": "https://news-portal-g4j45gyby-andriimaksymov.vercel.app/",
   "author": "andrii-panekalo",
   "dependencies": {
     "@date-io/date-fns": "^2.11.0",
