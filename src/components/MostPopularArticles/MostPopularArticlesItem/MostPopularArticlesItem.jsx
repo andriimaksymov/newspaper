@@ -10,7 +10,7 @@ import routes from '../../../utils/routes';
 import StyledDate from '../../StyledDate';
 import { Content, ImageWrapper, StyledLink } from './styles';
 
-const Item = ({ id, media, section, title, abstract, byline, url, nytdsection, published_date }) => {
+const MostPopularArticlesItem = ({ id, media, section, title, abstract, byline, url, nytdsection, published_date }) => {
   const history = useHistory();
 
   const handleOpenArticle = () => {
@@ -52,7 +52,7 @@ const Item = ({ id, media, section, title, abstract, byline, url, nytdsection, p
   );
 };
 
-Item.propTypes = {
+MostPopularArticlesItem.propTypes = {
   id: PropTypes.number,
   url: PropTypes.string,
   title: PropTypes.string,
@@ -64,4 +64,4 @@ Item.propTypes = {
   media: PropTypes.object,
 };
 
-export default memo(Item, isEqualPropsMemo);
+export default memo(MostPopularArticlesItem, isEqualPropsMemo);

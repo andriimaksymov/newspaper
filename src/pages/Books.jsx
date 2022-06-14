@@ -12,10 +12,10 @@ export default function Books() {
   const query = useQuery();
   const dispatch = useDispatch();
   const books = useSelector(getBooksSelector);
-  const list = query.get('list');
+  const list = query.get('list') || 'hardcover-fiction';
 
   useEffect(() => {
-    dispatch(fetchBooksRequest({ list: list || 'hardcover-fiction', date: new Date() }));
+    dispatch(fetchBooksRequest({ list, date: new Date() }));
 
     // eslint-disable-next-line
   }, [list]);

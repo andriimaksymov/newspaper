@@ -9,11 +9,11 @@ export default function Footer() {
   return (
     <Box py={4} backgroundColor="#f8f9fa" component="footer">
       <Container>
-        <Grid container spacing={2} justifyContent="space-between">
+        <Grid container spacing={2} justifyContent="space-between" alignItems="center">
           <Grid item>
             <NavLink to={routes.books}>Books</NavLink>
           </Grid>
-          <Grid>
+          <Grid item>
             <Typography variant="body2">
               Copyright ©2021-2022 All rights reserved
             </Typography>

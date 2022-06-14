@@ -2,16 +2,14 @@ import { useEffect, useRef } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { useDispatch, useSelector } from 'react-redux';
-import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
-import Skeleton from '@mui/material/Skeleton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import 'swiper/swiper-bundle.css';
 import { mostPopularClearAction, mostPopularFetchAction, movieReviewsFetchAction } from '../../store/articles/actions';
 import { getMostPopularWithMedia } from '../../store/articles/articleSlice';
 import { ButtonsWrap, PrevButton, NextButton, StyledSwiper, Wrapper } from './styles';
-import Item from './Item';
+import MostPopularArticlesItem from './MostPopularArticlesItem';
+import MostPopularArticleSkeleton from './MostPopularArticleSkeleton';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -28,7 +26,9 @@ export default function MostPopularArticles() {
     return () => {
       dispatch(mostPopularClearAction());
     };
-  }, [dispatch]);
+
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <Wrapper>
@@ -51,7 +51,7 @@ export default function MostPopularArticles() {
             {
               most_popular.map(story =>
                 <SwiperSlide key={story.id}>
-                  <Item
+                  <MostPopularArticlesItem
                     key={story.id}
                     id={story.id}
                     media={story.media[0]}
@@ -67,18 +67,7 @@ export default function MostPopularArticles() {
               )
             }
           </StyledSwiper>
-          : <Grid container spacing={2}>
-            <Grid xs={6} item>
-              <Skeleton variant="rectangular" height={360} />
-            </Grid>
-            <Grid xs={6} item>
-              <Stack spacing={2}>
-                <Skeleton variant="text" />
-                <Skeleton variant="text" />
-                <Skeleton variant="rectangular" height={70} />
-              </Stack>
-            </Grid>
-          </Grid>
+          : <MostPopularArticleSkeleton />
       }
       <ButtonsWrap>
         <PrevButton ref={navigationPrevRef}>

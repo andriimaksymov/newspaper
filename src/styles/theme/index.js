@@ -98,6 +98,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiSkeleton: {
+      styleOverrides: {
+        pulse: {
+          transform: 'none'
+        }
+      }
+    }
   },
   breakpoints: {
     values: {
