@@ -1,17 +1,16 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Grid from '@mui/material/Grid';
 import { fetchBooksNamesRequest, fetchBooksRequest } from '../store/books/actions';
-import { getBooksSelector } from '../store/books/articleSlice';
 import { useQuery } from '../hooks';
 import BooksAside from '../components/BooksAside';
 import Layout from '../components/layout';
 import Title from '../components/Title';
+import BooksList from '../components/BooksList';
 
 export default function Books() {
   const query = useQuery();
   const dispatch = useDispatch();
-  const books = useSelector(getBooksSelector);
   const list = query.get('list') || 'hardcover-fiction';
 
   useEffect(() => {
@@ -34,15 +33,7 @@ export default function Books() {
         </Grid>
         <Grid item md={9}>
           <Title title="Books" />
-          <Grid container spacing={3}>
-            {
-              books?.map(book =>
-                <Grid item xs={12} sm={6} md={4} lg={3} key={book.book_uri}>
-                  <img width="100%" alt={book.title} src={book.book_image} />
-                </Grid>,
-              )
-            }
-          </Grid>
+          <BooksList />
         </Grid>
       </Grid>
     </Layout>
