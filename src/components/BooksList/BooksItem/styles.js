@@ -1,9 +1,7 @@
 import { styled } from '@mui/styles';
-import { Link } from 'react-router-dom';
 
-export const ItemLink = styled(Link)(() => ({
+export const StyledBookItem = styled('div')(() => ({
   color: 'inherit',
-  cursor: 'pointer',
   display: 'grid',
   gridGap: 20,
   alignItems: 'flex-start',
